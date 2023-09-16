@@ -30,12 +30,22 @@
 *.exe
 *.out
 *.app
+*.vcxproj
+*.filters
 
-# Vusual C++ cache files
+# Visual C++ cache files
 ipch/
 *.aps
 *.ncb
 *.opendb
+*.db
+*db-shm
 *.opensdf
 *.sdf
 *.cachefile
+
+#Visual Studio files
+.vs/
+
+#Debug files
+Debug/
