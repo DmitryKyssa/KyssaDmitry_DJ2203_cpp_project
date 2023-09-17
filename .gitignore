@@ -45,7 +45,7 @@ ipch/
 *.cachefile
 
 #Visual Studio files
-.vs/
+.vs/KyssaDmitry_DJ2203_cpp_project/v16/
 
 #Debug files
 Debug/
