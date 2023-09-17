@@ -46,9 +46,9 @@ ipch/
 
 #Visual Studio files
 .vs/KyssaDmitry_DJ2203_cpp_project/v16/
-*.db
-*.db-shm
-*.db-wal
+*.*.db
+*.*.db-shm
+*.*.db-wal
 
 #Debug files
 Debug/
