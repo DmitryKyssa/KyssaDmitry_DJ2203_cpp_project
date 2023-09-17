@@ -39,7 +39,7 @@ ipch/
 *.ncb
 *.opendb
 *.db
-*db-shm
+*.db-shm
 *.opensdf
 *.sdf
 *.cachefile
