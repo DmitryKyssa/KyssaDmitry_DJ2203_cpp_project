@@ -31,7 +31,7 @@ public:
 
 	Card(int _suit, int _rank);
 
-	void Print();
+	void print();
 
 	~Card();
 };

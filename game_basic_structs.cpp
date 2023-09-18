@@ -20,7 +20,7 @@ Card::Card(int _suit, int _rank) {
 	}
 }
 
-void Card::Print() {
+void Card::print() {
 	std::cout << this->suit << " " << this->rank << std::endl;
 }
 

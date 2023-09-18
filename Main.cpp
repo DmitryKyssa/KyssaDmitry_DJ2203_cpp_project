@@ -4,19 +4,19 @@
 
 int main()
 {
-    Card deck[36];
+	Card deck[36];
 
-    //Creating deck of cards
-    for (int i = 1; i <= 4; i++) {
-        for (int j = 6; j <= 14; j++) {
-            deck[(i - 1) * 9 + (j - 6)] = Card(i, j);
-        }
-    }
+	//Creating deck of cards
+	for (auto& it_suits : suits) {
+		for (auto& it_ranks : ranks) {
+			deck[(it_suits.first - 1) * ranks.size() + (it_ranks.first - 6)] = Card(it_suits.first, it_ranks.first);
+		}
+	}
 
-    //Print all cards name
-    for (int i = 0; i < sizeof(deck) / sizeof(deck[0]); i++) {
-        deck[i].Print();
-    }
+	//Print all cards name
+	for (Card it: deck) {
+		it.print();
+	}
 
-    return 0;
+	return 0;
 }
