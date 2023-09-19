@@ -18,5 +18,8 @@ int main()
 		it.print();
 	}
 
+	Card exemple{10, 10};
+	exemple.print();
+
 	return 0;
 }

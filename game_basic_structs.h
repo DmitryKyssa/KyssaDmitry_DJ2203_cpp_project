@@ -31,7 +31,7 @@ public:
 
 	Card(int _suit, int _rank);
 
-	void print();
+	void print() const;
 
 	~Card();
 };
