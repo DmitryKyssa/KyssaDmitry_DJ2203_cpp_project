@@ -14,12 +14,12 @@ int main()
 	}
 
 	//Print all cards name
-	for (Card it: deck) {
-		it.print();
+	for (Card &it: deck) {
+		std::cout << it;
 	}
 
 	Card exemple{10, 10};
-	exemple.print();
+	std::cout << exemple;
 
 	return 0;
 }

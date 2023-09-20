@@ -31,7 +31,10 @@ public:
 
 	Card(int _suit, int _rank);
 
-	void print() const;
+	std::string getSuit();
+	std::string getRank();
+
+	friend std::ostream& operator<<(std::ostream &out, Card &card);
 
 	~Card();
 };

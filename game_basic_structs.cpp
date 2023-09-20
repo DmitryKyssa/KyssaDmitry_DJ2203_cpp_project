@@ -20,8 +20,12 @@ Card::Card(int _suit, int _rank) {
 	}
 }
 
-void Card::print() const{
-	std::cout << this->suit << " " << this->rank << std::endl;
+std::string Card::getSuit() { return this->suit; }
+
+std::string Card::getRank() { return this->rank; }
+
+std::ostream& operator<<(std::ostream& out, Card& card) {
+	return out << card.getRank() << " " << card.getSuit() << std::endl;
 }
 
 Card::~Card() {}
