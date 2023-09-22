@@ -5,24 +5,29 @@
 
 int main()
 {
-	std::list<Card> initialDeck;
+	std::vector<Card> deck;
 
 	//Creating deck of cards
 	for (auto& it_suits : suits) {
 		for (auto& it_ranks : ranks) {
 			Card* tmp = new Card(it_suits.first, it_ranks.first);
-			initialDeck.push_back(*tmp);
+			deck.push_back(*tmp);
 			//deck[(it_suits.first - 1) * ranks.size() + (it_ranks.first - 6)] = Card(it_suits.first, it_ranks.first);
 		}
 	}
 
 	//Print all cards name
-	for (Card &it: initialDeck) {
+	/*for (Card &it: deck) {
 		std::cout << it;
-	}
+	}*/
 
-	Card exemple{10, 20};
-	std::cout << exemple;
+	deck = shuffling(deck);
+
+	int i = 1;
+	for (Card& it : deck) {
+		std::cout << i << " " << it ;
+		i++;
+	}
 
 	return 0;
 }

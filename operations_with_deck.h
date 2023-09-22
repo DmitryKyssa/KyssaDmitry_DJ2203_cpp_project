@@ -1,10 +1,9 @@
 #pragma once
 
-template <class T>
-class Deck {
-private:
-	T* ptr;
-public:
-	Deck<T>();
+#include<algorithm>
+#include<vector>
+#include<ctime>
+#include"game_basic_structs.h"
 
-};
+//function for deck shuffle
+std::vector<Card> shuffling(std::vector<Card>& _deck);
