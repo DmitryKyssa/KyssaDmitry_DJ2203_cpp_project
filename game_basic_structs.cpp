@@ -1,4 +1,6 @@
-#include"game_basic_structs.h"
+#include "game_basic_structs.h"
+#include <algorithm>
+#include <ctime>
 
 //default constructor
 Card::Card() {}
@@ -29,3 +31,25 @@ std::ostream& operator<<(std::ostream& out, Card& card) {
 }
 
 Card::~Card() {}
+
+Deck::Deck()
+{
+	for (auto& it_suits : suits) {
+		for (auto& it_ranks : ranks) {
+			Card* tmp = new Card(it_suits.first, it_ranks.first);
+			deck.push_back(*tmp);
+			//deck[(it_suits.first - 1) * ranks.size() + (it_ranks.first - 6)] = Card(it_suits.first, it_ranks.first);
+		}
+	}
+}
+
+void Deck::shuffling() {
+	srand((unsigned int)time(NULL));
+	std::vector<Card> tmp(this->deck.begin(), this->deck.end());
+	std::random_shuffle(tmp.begin(), tmp.end());
+	std::copy(tmp.begin(), tmp.end(), this->deck.begin());
+}
+
+std::vector<Card> Deck::getDeck() { return this->deck; }
+
+Deck::~Deck() {}

@@ -1,15 +1,15 @@
 #pragma once
 
-#include<iostream>
-#include<unordered_map>
+#include <iostream>
+#include <unordered_map>
 
-const std::unordered_map <int, std::string> suits {
+const std::unordered_map <int, std::string> suits{
 	{1, "Diamonds"},
 	{2, "Hearts"},
 	{3, "Clubs"},
 	{4, "Spades"}
 };
-const std::unordered_map <int, std::string> ranks {
+const std::unordered_map <int, std::string> ranks{
 	{6, "Six"},
 	{7, "Seven"},
 	{8, "Eight"},
@@ -34,7 +34,23 @@ public:
 	std::string getSuit();
 	std::string getRank();
 
-	friend std::ostream& operator<<(std::ostream &out, Card &card);
+	friend std::ostream& operator<<(std::ostream& out, Card& card);
 
 	~Card();
+};
+
+//TODO singleton
+class Deck
+{
+private:
+	std::vector<Card> deck;
+public:
+	Deck();
+
+	std::vector<Card> getDeck();
+
+	//shuffle
+	void shuffling();
+
+	~Deck();
 };
