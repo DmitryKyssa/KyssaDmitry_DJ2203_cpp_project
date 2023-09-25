@@ -32,13 +32,18 @@ std::ostream& operator<<(std::ostream& out, Card& card) {
 
 Card::~Card() {}
 
+
+
+
+
+
+
 Deck::Deck()
 {
 	for (auto& it_suits : suits) {
 		for (auto& it_ranks : ranks) {
-			Card* tmp = new Card(it_suits.first, it_ranks.first);
-			deck.push_back(*tmp);
-			//deck[(it_suits.first - 1) * ranks.size() + (it_ranks.first - 6)] = Card(it_suits.first, it_ranks.first);
+			Card tmp(it_suits.first, it_ranks.first);
+			deck.push_back(tmp);
 		}
 	}
 }
@@ -50,6 +55,15 @@ void Deck::shuffling() {
 	std::copy(tmp.begin(), tmp.end(), this->deck.begin());
 }
 
-std::vector<Card> Deck::getDeck() { return this->deck; }
+Deck* Deck::Instance = nullptr;
+
+Deck* Deck::getInstance()
+{
+	if (Deck::Instance == nullptr) {
+		Deck::Instance = new Deck();
+		return Deck::Instance;
+	}
+	else return Deck::Instance;
+}
 
 Deck::~Deck() {}

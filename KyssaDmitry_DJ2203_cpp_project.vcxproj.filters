@@ -21,18 +21,12 @@
     <ClCompile Include="game_basic_structs.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="operations_with_deck.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="game_basic_structs.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="operations_with_deck.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="player.h">

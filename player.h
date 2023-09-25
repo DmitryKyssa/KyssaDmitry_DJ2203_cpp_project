@@ -10,7 +10,7 @@ class Player
 	private:
 		std::vector<Card> player_cards;
 	public:
-	Player(Deck _deck);
+	Player();
 
 	void print();
 

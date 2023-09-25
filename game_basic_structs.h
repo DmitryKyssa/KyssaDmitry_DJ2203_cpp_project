@@ -39,17 +39,18 @@ public:
 	~Card();
 };
 
-//TODO singleton
+
+
+
+
 class Deck
 {
 private:
-	std::vector<Card> deck;
-public:
+	static Deck* Instance;
 	Deck();
-
-	std::vector<Card> getDeck();
-
-	//shuffle
+public:
+	static Deck* getInstance();
+	std::vector<Card> deck;
 	void shuffling();
 
 	~Deck();
