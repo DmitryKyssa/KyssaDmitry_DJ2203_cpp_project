@@ -2,8 +2,6 @@
 
 #include "game_basic_structs.h"
 #include "player.h"
-#include <algorithm>
-#include <iterator>
 
 int main()
 {
@@ -18,6 +16,8 @@ int main()
 
 	Player* player = new Player();
 	player->print();
+	Card tmp = player->select();
+	std::cout << tmp;
 
 	std::cout << std::endl;
 

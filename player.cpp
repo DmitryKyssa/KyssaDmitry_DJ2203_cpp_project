@@ -17,6 +17,15 @@ void Player::print()
 	}
 }
 
+Card Player::select()
+{
+	std::cout << "Please, select a card" << std::endl;
+	std::cout << "Enter a number (1 - first card...)" << std::endl;
+	int input = 1;
+	std::cin >> input;
+	return player_cards.at(input-1);
+}
+
 Player::~Player()
 {
 }

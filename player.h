@@ -14,5 +14,7 @@ class Player
 
 	void print();
 
+	Card select();
+
 	~Player();
 };
