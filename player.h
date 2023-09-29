@@ -16,5 +16,7 @@ class Player
 
 	Card select();
 
+	bool checkIfMoveIsCorrect(int _input);
+
 	~Player();
 };
