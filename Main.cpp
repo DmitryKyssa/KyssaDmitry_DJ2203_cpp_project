@@ -25,16 +25,22 @@ int main()
 		while (isGame) {
 			system("cls");
 
+			std::cout << "Player's cards:" << std::endl;
 			player->print();
 
 			std::cout << std::endl;
 
-			std::cout << cardOnTable << std::endl;
+			std::cout << "Card on table: ";
+			std::cout << cardOnTable << "Number of cards in deck: " << Deck::getInstance()->deck.size() << std::endl;
 
 			std::cout << std::endl;
 
+			std::cout << "NPC's cards:" << std::endl;
 			npc->print();
 
+			std::cout << std::endl;
+
+			Deck::getInstance()->deck.push_back(cardOnTable);
 			cardOnTable = player->select();
 
 			Sleep(3000);
