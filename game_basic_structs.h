@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <unordered_map>
+#include <vector>
 
 const std::unordered_map <int, std::string> suits{
 	{1, "Diamonds"},

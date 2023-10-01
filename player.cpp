@@ -17,28 +17,38 @@ void Player::print()
 	}
 }
 
-Card Player::select()
+Card Player::select(Card& cOT)
 {
 	std::cout << "Please, select a card" << std::endl;
 	std::cout << "Enter a number (1 - first card...)" << std::endl;
 	int input;
+	Card tmp;
 	do
 	{
 		std::cin >> input;
-	} while (!checkIfMoveIsCorrect(input));
+		tmp = player_cards.at(input - 1);
+	} while (!checkIfRangeIsCorrect(input, cOT, tmp));
 
-	Card tmp = player_cards.at(input - 1);
 	player_cards.erase(player_cards.begin() + input - 1);
 	return tmp;
 }
 
-bool Player::checkIfMoveIsCorrect(int _input)
+bool Player::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
 {
 	if (_input >= 1 && _input <= (int)player_cards.size()) {
-		return true;
+		if (onTable.getRank() == selected.getRank()
+			|| onTable.getSuit() == selected.getSuit()
+			|| selected.getRank() == "Jack") {
+			return true;
+		}
+		else {
+			std::cout << "Card must be the suit " << onTable.getSuit() << " or rank"
+				<< onTable.getRank() << " or a Jack!" << std::endl;
+			return false;
+		}
 	}
 	else {
-		std::cout << "Incorrect input!" << std::endl;
+		std::cout << "Incorrect input! Enter a number from 1 to " << player_cards.size() << std::endl;
 		return false;
 	}
 }

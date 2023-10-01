@@ -14,9 +14,9 @@ class Player
 
 	void print();
 
-	Card select();
+	Card select(Card& cOT);
 
-	bool checkIfMoveIsCorrect(int _input);
+	bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected);
 
 	~Player();
 };

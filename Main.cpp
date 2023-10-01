@@ -4,21 +4,25 @@
 #include "player.h"
 #include "windows.h"
 
+//TODO add logic of get a card from deck
+//TODO add logic of making pase(hod)
+//TODO rules of 101
+//TODO add a score
+
 int main()
 {
 	Deck::getInstance()->shuffling();
 
-	//Print all cards name
-	/*for (Card &it: deck) {
-		std::cout << it;
-	}*/
 	bool isGame = false;
 
 	Player* player = new Player();
 	Player* npc = new Player();
 	Card cardOnTable = Deck::getInstance()->deck.back();
+	std::vector<Card> usedCards;
+	usedCards.push_back(cardOnTable);
+	Deck::getInstance()->deck.pop_back();
 
-	std::cout << "Enter key 'p' to start the game." << std::endl;
+	std::cout << "Press any key to start the game." << std::endl;
 
 	if (std::cin.get()) {
 		isGame = true;
@@ -40,10 +44,26 @@ int main()
 
 			std::cout << std::endl;
 
-			Deck::getInstance()->deck.push_back(cardOnTable);
-			cardOnTable = player->select();
+			std::cout << "Cards in deck:" << std::endl;
+			for (Card& it : Deck::getInstance()->deck) {
+				std::cout << it;
+			}
 
-			Sleep(3000);
+			std::cout << std::endl;
+
+			std::cout << "Used cards:" << std::endl;
+			for (Card& it : usedCards) {
+				std::cout << it;
+			}
+
+			std::cout << std::endl;
+
+			cardOnTable = player->select(cardOnTable);
+
+			usedCards.push_back(cardOnTable);
+			Deck::getInstance()->deck.pop_back();
+
+			Sleep(2000);
 		}
 	}
 	return 0;
