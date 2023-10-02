@@ -8,12 +8,14 @@
 //TODO add logic of making pase(hod)
 //TODO rules of 101
 //TODO add a score
+//TODO divide player and npc by creating 2 different classes inherited from one abstract character
 
 int main()
 {
 	Deck::getInstance()->shuffling();
 
 	bool isGame = false;
+	bool playerCanMove = true;
 
 	Player* player = new Player();
 	Player* npc = new Player();
@@ -58,10 +60,15 @@ int main()
 
 			std::cout << std::endl;
 
-			cardOnTable = player->select(cardOnTable);
+			if (playerCanMove) {
+				player->move(cardOnTable);
+				!playerCanMove;
+			}
+			else {
+				//npc move
+			}
 
 			usedCards.push_back(cardOnTable);
-			Deck::getInstance()->deck.pop_back();
 
 			Sleep(2000);
 		}

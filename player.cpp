@@ -17,20 +17,67 @@ void Player::print()
 	}
 }
 
+void Player::move(Card& cOT)
+{
+	int choice;
+	if (cOT.getRank() == "Eight") {
+		do
+		{
+			std::cout << "\nChoose an option:\n"
+				<< "1) Make a move"
+				<< "2) Draw"
+				<< "Enter 1 or 2: " << std::endl;
+			std::cin >> choice;
+		} while (!(choice >= 1 && choice <= 2));
+	}
+	else {
+		do
+		{
+			std::cout << "\nChoose an option:\n"
+				<< "1) Make a move"
+				<< "2) Draw"
+				<< "3) Pass"
+				<< "Enter 1, 2 or 3: " << std::endl;
+			std::cin >> choice;
+		} while (!(choice >= 1 && choice <= 3));
+	}
+
+	switch (choice)
+	{
+	case 1:
+		cOT = select(cOT);
+		break;
+	case 2:
+		draw();
+		break;
+	case 3:
+		pass();
+		break;
+	}
+}
+
 Card Player::select(Card& cOT)
 {
-	std::cout << "Please, select a card" << std::endl;
-	std::cout << "Enter a number (1 - first card...)" << std::endl;
 	int input;
 	Card tmp;
 	do
 	{
+		std::cout << "Please, select a card" << std::endl;
+		std::cout << "Enter a number from 1 (first card) to " << player_cards.size() << " (last card):" << std::endl;
 		std::cin >> input;
 		tmp = player_cards.at(input - 1);
 	} while (!checkIfRangeIsCorrect(input, cOT, tmp));
 
 	player_cards.erase(player_cards.begin() + input - 1);
 	return tmp;
+}
+
+void Player::draw()
+{
+}
+
+void Player::pass()
+{
 }
 
 bool Player::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
@@ -42,7 +89,7 @@ bool Player::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
 			return true;
 		}
 		else {
-			std::cout << "Card must be the suit " << onTable.getSuit() << " or rank"
+			std::cout << "Card must be the suit " << onTable.getSuit() << " or rank "
 				<< onTable.getRank() << " or a Jack!" << std::endl;
 			return false;
 		}

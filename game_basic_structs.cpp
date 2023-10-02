@@ -34,6 +34,7 @@ Card::~Card() {}
 
 
 
+//TODO divide card and deck logic
 
 
 
