@@ -3,26 +3,24 @@
 #include "game_basic_structs.h"
 #include "player.h"
 #include "windows.h"
+#include "npc.h"
 
 //TODO add logic of get a card from deck
 //TODO add logic of making pase(hod)
 //TODO rules of 101
 //TODO add a score
-//TODO divide player and npc by creating 2 different classes inherited from one abstract character
 
 int main()
 {
-	Deck::getInstance()->shuffling();
+	Character::getInstance<Deck>()->shuffling();
 
 	bool isGame = false;
 	bool playerCanMove = true;
 
-	Player* player = new Player();
-	Player* npc = new Player();
-	Card cardOnTable = Deck::getInstance()->deck.back();
+	Card cardOnTable = Character::getInstance<Deck>()->deck.back();
 	std::vector<Card> usedCards;
 	usedCards.push_back(cardOnTable);
-	Deck::getInstance()->deck.pop_back();
+	Character::getInstance<Deck>()->deck.pop_back();
 
 	std::cout << "Press any key to start the game." << std::endl;
 
@@ -32,22 +30,22 @@ int main()
 			system("cls");
 
 			std::cout << "Player's cards:" << std::endl;
-			player->print();
+			Character::getInstance<Player>()->print <Player>();
 
 			std::cout << std::endl;
 
 			std::cout << "Card on table: ";
-			std::cout << cardOnTable << "Number of cards in deck: " << Deck::getInstance()->deck.size() << std::endl;
+			std::cout << cardOnTable << "Number of cards in deck: " << Character::getInstance<Deck>()->deck.size() << std::endl;
 
 			std::cout << std::endl;
 
 			std::cout << "NPC's cards:" << std::endl;
-			npc->print();
+			Character::getInstance<NPC>()->print <NPC>();
 
 			std::cout << std::endl;
 
 			std::cout << "Cards in deck:" << std::endl;
-			for (Card& it : Deck::getInstance()->deck) {
+			for (Card& it : Character::getInstance<Deck>()->deck) {
 				std::cout << it;
 			}
 
@@ -61,7 +59,7 @@ int main()
 			std::cout << std::endl;
 
 			if (playerCanMove) {
-				player->move(cardOnTable);
+				//player->move(cardOnTable);
 				!playerCanMove;
 			}
 			else {

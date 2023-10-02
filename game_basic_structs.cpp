@@ -2,10 +2,8 @@
 #include <algorithm>
 #include <ctime>
 
-//default constructor
 Card::Card() {}
 
-//constructor with parameters
 Card::Card(int _suit, int _rank) {
 	if (suits.find(_suit) != suits.end()) {
 		this->suit = suits.at(_suit);
@@ -57,14 +55,5 @@ void Deck::shuffling() {
 }
 
 Deck* Deck::Instance = nullptr;
-
-Deck* Deck::getInstance()
-{
-	if (Deck::Instance == nullptr) {
-		Deck::Instance = new Deck();
-		return Deck::Instance;
-	}
-	else return Deck::Instance;
-}
 
 Deck::~Deck() {}

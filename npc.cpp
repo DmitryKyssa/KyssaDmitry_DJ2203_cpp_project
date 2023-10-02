@@ -4,9 +4,7 @@ NPC::NPC()
 {
 }
 
-void NPC::print()
-{
-}
+NPC* NPC::Instance = nullptr;
 
 void NPC::move(Card& cOT)
 {

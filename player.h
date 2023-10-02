@@ -4,12 +4,13 @@
 
 class Player : public Character
 {
-private:
-	std::vector<Card> player_cards;
 public:
+	
+	static Player* Instance;
+
 	Player();
 
-	void print();
+	std::vector<Card> player_cards;
 
 	void move(Card& cOT);
 

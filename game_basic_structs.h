@@ -47,11 +47,11 @@ public:
 class Deck
 {
 private:
+	
+public:
 	static Deck* Instance;
 
 	Deck();
-public:
-	static Deck* getInstance();
 
 	std::vector<Card> deck;
 

@@ -7,7 +7,11 @@ const int INITIAL_NUM_PLAYER_CARDS = 4;
 
 class Character {
 public:
-	virtual void print() = 0;
+	template <typename T>
+	static T* getInstance();
+
+	template<typename T>
+	void print();
 
 	virtual void move(Card& cOT) = 0;
 
@@ -19,3 +23,21 @@ public:
 
 	virtual bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected) = 0;
 };
+
+template<class T>
+static inline T* Character::getInstance()
+{
+	if (T::Instance == nullptr) {
+		T::Instance = new T();
+		return T::Instance;
+	}
+	else return T::Instance;
+}
+
+template<typename T>
+inline void Character::print()
+{
+	for (Card& it : Character::getInstance<T>()->player_cards) {
+		std::cout << it;
+	}
+}
