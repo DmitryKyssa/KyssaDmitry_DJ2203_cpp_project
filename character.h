@@ -13,7 +13,7 @@ public:
 	template<typename T>
 	void print();
 
-	virtual void move(Card& cOT) = 0;
+	virtual void move(Card& cOT, int counter) = 0;
 
 	virtual Card select(Card& cOT) = 0;
 

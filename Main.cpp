@@ -15,7 +15,9 @@ int main()
 	Character::getInstance<Deck>()->shuffling();
 
 	bool isGame = false;
-	bool playerCanMove = true;
+
+	Character::getInstance<Player>();
+	Character::getInstance<NPC>();
 
 	Card cardOnTable = Character::getInstance<Deck>()->deck.back();
 	std::vector<Card> usedCards;
@@ -58,12 +60,18 @@ int main()
 
 			std::cout << std::endl;
 
-			if (playerCanMove) {
-				//player->move(cardOnTable);
-				!playerCanMove;
+			int counter = 0;
+
+			if (Character::getInstance<Player>()->canMove) {
+				Character::getInstance<Player>()->move(cardOnTable, counter);
+				Character::getInstance<NPC>()->canMove = true;
 			}
-			else {
-				//npc move
+
+			usedCards.push_back(cardOnTable);
+
+			if (Character::getInstance<NPC>()->canMove) {
+				Character::getInstance<NPC>()->move(cardOnTable, counter);
+				Character::getInstance<Player>()->canMove = true;
 			}
 
 			usedCards.push_back(cardOnTable);

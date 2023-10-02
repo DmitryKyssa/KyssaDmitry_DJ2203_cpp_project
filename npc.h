@@ -11,7 +11,9 @@ public:
 
 	std::vector<Card> player_cards;
 
-	void move(Card& cOT);
+	bool canMove;
+
+	void move(Card& cOT, int counter);
 
 	Card select(Card& cOT);
 

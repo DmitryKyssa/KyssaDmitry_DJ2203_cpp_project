@@ -4,46 +4,57 @@
 
 Player::Player()
 {
-	for (int i = 0; i < INITIAL_NUM_PLAYER_CARDS; i++) {
-		player_cards.push_back(Character::getInstance<Deck>()->deck.at(i));
+	canMove = true;
+	int currentSize = (int)Character::getInstance<Deck>()->deck.size();
+	for (int i = (int)Character::getInstance<Deck>()->deck.size(); i > currentSize - INITIAL_NUM_PLAYER_CARDS; i--) {
+		player_cards.push_back(Character::getInstance<Deck>()->deck.at(i - 1));
 		Character::getInstance<Deck>()->deck.pop_back();
 	}
 }
 
 Player* Player::Instance = nullptr;
 
-void Player::move(Card& cOT)
+//TODO after draw player can or select, or pass
+void Player::move(Card& cOT, int counter)
 {
 	int choice;
 	if (cOT.getRank() == "Eight") {
 		do
 		{
 			std::cout << "\nChoose an option:\n"
-				<< "1) Make a move"
-				<< "2) Draw"
+				<< "1) Make a move\n"
+				<< "2) Draw\n"
 				<< "Enter 1 or 2: " << std::endl;
 			std::cin >> choice;
 		} while (!(choice >= 1 && choice <= 2));
 	}
-	else {
+	else if (cOT.getRank() != "Eight" && counter == 0) {
 		do
 		{
 			std::cout << "\nChoose an option:\n"
-				<< "1) Make a move"
-				<< "2) Draw"
-				<< "3) Pass"
+				<< "1) Make a move\n"
+				<< "2) Draw\n"
+				<< "3) Pass\n"
 				<< "Enter 1, 2 or 3: " << std::endl;
 			std::cin >> choice;
 		} while (!(choice >= 1 && choice <= 3));
+	}
+	else if (cOT.getRank() != "Eight" && counter > 0) {
+		canMove = false;
 	}
 
 	switch (choice)
 	{
 	case 1:
 		cOT = select(cOT);
+		counter++;
+		move(cOT, counter);
+		canMove = false;
 		break;
 	case 2:
 		draw();
+		Character::getInstance<Player>()->print<Player>();
+		move(cOT, counter);
 		break;
 	case 3:
 		pass();
@@ -69,10 +80,13 @@ Card Player::select(Card& cOT)
 
 void Player::draw()
 {
+	player_cards.push_back(Character::getInstance<Deck>()->deck.back());
+	Character::getInstance<Deck>()->deck.pop_back();
 }
 
 void Player::pass()
 {
+	canMove = false;
 }
 
 bool Player::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
