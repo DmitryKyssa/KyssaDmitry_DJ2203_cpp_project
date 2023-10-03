@@ -1,0 +1,19 @@
+CC = g++
+CXXF = -std=c++14
+LDF = -lstdc++
+
+all: Exe
+Exe: main.o game_basic_structs.o player.o
+	$(CC) main.o game_basic_structs.o player.o -o Exe $(LDF)
+
+main.o: main.cpp
+	$(CC) -c main.cpp $(CXXF)
+
+game_basic_structs.o: game_basic_structs.cpp
+	$(CC) -c game_basic_structs.cpp $(CXXF)
+
+player.o: player.cpp
+	$(CC) -c player.cpp $(CXXF)
+
+clean:
+	rm -rf *o main.o game_basic_structs.o player.o Exe

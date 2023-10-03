@@ -139,12 +139,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="game_basic_structs.cpp" />
+    <ClCompile Include="card.cpp" />
+    <ClCompile Include="deck.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="npc.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="game_basic_structs.h" />
+    <ClInclude Include="deck.h" />
+    <ClInclude Include="card.h" />
+    <ClInclude Include="character.h" />
+    <ClInclude Include="npc.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

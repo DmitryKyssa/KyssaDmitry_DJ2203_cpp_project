@@ -2,13 +2,12 @@
 
 #include "character.h"
 
-class Player : public Character
+class NPC : public Character
 {
 public:
-	
-	static Player* Instance;
+	static NPC* Instance;
 
-	Player();
+	NPC();
 
 	std::vector<Card> player_cards;
 
@@ -24,5 +23,5 @@ public:
 
 	bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected);
 
-	~Player();
+	~NPC();
 };

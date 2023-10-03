@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <unordered_map>
+#include <vector>
 
 const std::unordered_map <int, std::string> suits{
 	{1, "Diamonds"},
@@ -37,24 +38,4 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, Card& card);
 
 	~Card();
-};
-
-
-
-
-
-class Deck
-{
-private:
-	static Deck* Instance;
-
-	Deck();
-public:
-	static Deck* getInstance();
-
-	std::vector<Card> deck;
-
-	void shuffling();
-
-	~Deck();
 };
