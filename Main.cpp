@@ -5,10 +5,10 @@
 #include "windows.h"
 #include "npc.h"
 
-//TODO add logic of get a card from deck
 //TODO add logic of making pase(hod)
 //TODO rules of 101
 //TODO add a score
+//TODO clear screen after draw a card
 
 int main()
 {

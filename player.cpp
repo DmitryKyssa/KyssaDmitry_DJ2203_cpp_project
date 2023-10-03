@@ -15,7 +15,7 @@ Player::Player()
 Player* Player::Instance = nullptr;
 
 //TODO after draw player can or select, or pass
-void Player::move(Card& cOT, int counter)
+void Player::move(Card& cOT, int numOfEntries)
 {
 	int choice;
 	if (cOT.getRank() == "Eight") {
@@ -28,7 +28,7 @@ void Player::move(Card& cOT, int counter)
 			std::cin >> choice;
 		} while (!(choice >= 1 && choice <= 2));
 	}
-	else if (cOT.getRank() != "Eight" && counter == 0) {
+	else if (cOT.getRank() != "Eight" && numOfEntries == 0) {
 		do
 		{
 			std::cout << "\nChoose an option:\n"
@@ -39,7 +39,7 @@ void Player::move(Card& cOT, int counter)
 			std::cin >> choice;
 		} while (!(choice >= 1 && choice <= 3));
 	}
-	else if (cOT.getRank() != "Eight" && counter > 0) {
+	else if (cOT.getRank() != "Eight" && numOfEntries > 0) {
 		canMove = false;
 	}
 
@@ -47,14 +47,14 @@ void Player::move(Card& cOT, int counter)
 	{
 	case 1:
 		cOT = select(cOT);
-		counter++;
-		move(cOT, counter);
+		numOfEntries++;
+		move(cOT, numOfEntries);
 		canMove = false;
 		break;
 	case 2:
 		draw();
 		Character::getInstance<Player>()->print<Player>();
-		move(cOT, counter);
+		move(cOT, numOfEntries);
 		break;
 	case 3:
 		pass();
