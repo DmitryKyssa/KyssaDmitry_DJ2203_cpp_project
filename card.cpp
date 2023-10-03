@@ -3,19 +3,8 @@
 Card::Card() {}
 
 Card::Card(int _suit, int _rank) {
-	if (suits.find(_suit) != suits.end()) {
-		this->suit = suits.at(_suit);
-	}
-	else {
-		std::cout << "This suit doesn't exist!";
-	}
-
-	if (ranks.find(_rank) != ranks.end()) {
-		this->rank = ranks.at(_rank);
-	}
-	else {
-		std::cout << "This rank doesn't exist!";
-	}
+	this->suit = allSuits[_suit];
+	this->rank = allRanks[_rank];
 }
 
 std::string Card::getSuit() { return this->suit; }
