@@ -1,6 +1,7 @@
 #include "player.h"
 #include <vector>
-#include "game_basic_structs.h"
+#include "card.h"
+#include "deck.h"
 
 Player::Player()
 {
