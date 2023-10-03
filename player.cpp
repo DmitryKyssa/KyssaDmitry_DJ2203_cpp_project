@@ -42,6 +42,7 @@ void Player::move(Card& cOT, int numOfEntries)
 	}
 	else if (cOT.getRank() != "Eight" && numOfEntries > 0) {
 		canMove = false;
+		return;
 	}
 
 	switch (choice)
