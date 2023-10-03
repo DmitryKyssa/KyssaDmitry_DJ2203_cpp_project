@@ -4,9 +4,9 @@
 
 Deck::Deck()
 {
-	for (auto& it_suits : suits) {
-		for (auto& it_ranks : ranks) {
-			Card tmp(it_suits.first, it_ranks.first);
+	for (int i = 0; i < sizeof(allSuits) / sizeof(allSuits[0]); i++) {
+		for (int j = 0; j < sizeof(allRanks) / sizeof(allRanks[0]); j++) {
+			Card tmp(i, j);
 			deck.push_back(tmp);
 		}
 	}

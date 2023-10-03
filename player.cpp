@@ -18,7 +18,7 @@ Player* Player::Instance = nullptr;
 //TODO after draw player can or select, or pass
 void Player::move(Card& cOT, int numOfEntries)
 {
-	int choice;
+	int choice = 1;
 	if (cOT.getRank() == "Eight") {
 		do
 		{
@@ -65,7 +65,7 @@ void Player::move(Card& cOT, int numOfEntries)
 
 Card Player::select(Card& cOT)
 {
-	int input;
+	int input = 1;
 	Card tmp;
 	do
 	{
