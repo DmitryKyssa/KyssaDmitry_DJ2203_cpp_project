@@ -1,7 +1,7 @@
 #pragma once
 
 #include <vector>
-#include "game_basic_structs.h"
+#include "card.h"
 
 const int INITIAL_NUM_PLAYER_CARDS = 4;
 

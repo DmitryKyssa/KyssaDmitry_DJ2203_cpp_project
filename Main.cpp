@@ -1,6 +1,7 @@
 // main.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
-#include "game_basic_structs.h"
+#include "card.h"
+#include "deck.h"
 #include "player.h"
 #include "windows.h"
 #include "npc.h"
@@ -9,6 +10,7 @@
 //TODO rules of 101
 //TODO add a score
 //TODO clear screen after draw a card
+//TODO overload operations with cards (>, <, == (maybe, spaceship))
 
 int main()
 {
