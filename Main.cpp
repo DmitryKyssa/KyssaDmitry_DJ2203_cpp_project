@@ -16,13 +16,30 @@ int main()
 
 	bool isGame = false;
 
-	Character::getInstance<Player>();
-	Character::getInstance<NPC>();
+	/*Character::getInstance<Player>();
+	Character::getInstance<NPC>();*/
 
 	Card cardOnTable = Character::getInstance<Deck>()->deck.back();
 	std::vector<Card> usedCards;
 	usedCards.push_back(cardOnTable);
 	Character::getInstance<Deck>()->deck.pop_back();
+
+	//DEMO 
+
+	/*Card tmp;
+	std::cin >> tmp;
+	std::cout << tmp;
+
+	Card copy(tmp);
+	std::cout << copy;
+
+	Card assigned = copy;
+	std::cout << assigned;
+
+	std::cout << (&assigned == &copy) << std::endl;
+
+	std::cin.get();*/
+
 
 	std::cout << "Press any key to start the game." << std::endl;
 
@@ -63,18 +80,18 @@ int main()
 			int counter = 0;
 
 			if (Character::getInstance<Player>()->canMove) {
-				Character::getInstance<Player>()->move(cardOnTable, counter);
+				//Character::getInstance<Player>()->move(cardOnTable, counter);
 				Character::getInstance<NPC>()->canMove = true;
 			}
 
-			usedCards.push_back(cardOnTable);
+			//usedCards.push_back(cardOnTable);
 
 			if (Character::getInstance<NPC>()->canMove) {
 				Character::getInstance<NPC>()->move(cardOnTable, counter);
 				Character::getInstance<Player>()->canMove = true;
 			}
 
-			usedCards.push_back(cardOnTable);
+			//usedCards.push_back(cardOnTable);
 
 			Sleep(2000);
 		}

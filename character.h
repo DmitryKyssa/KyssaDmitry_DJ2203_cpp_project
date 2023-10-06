@@ -13,7 +13,7 @@ public:
 	template<typename T>
 	void print();
 
-	virtual void move(Card& cOT, int counter) = 0;
+	//virtual void move(Card& cOT, int counter) = 0;
 
 	virtual Card select(Card& cOT) = 0;
 
@@ -24,7 +24,7 @@ public:
 	virtual bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected) = 0;
 };
 
-template<class T>
+template<typename T>
 static inline T* Character::getInstance()
 {
 	if (T::Instance == nullptr) {

@@ -14,7 +14,7 @@ public:
 
 	bool canMove;
 
-	void move(Card& cOT, int counter);
+	void move(Card& cOT, std::vector<Card> uC,int counter);
 
 	Card select(Card& cOT);
 
