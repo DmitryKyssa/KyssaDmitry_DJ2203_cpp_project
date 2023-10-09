@@ -4,10 +4,6 @@
 #include <unordered_map>
 #include <vector>
 
-//const std::string allSuits[4] = {"Diamonds", "Hearts", "Clubs", "Spades"};
-//
-//const std::string allRanks[9] = { "Six", "Seven", "Eight", "Nine", "Ten", "Jack", "Queen", "King", "Ace" };
-
 const std::unordered_map <int, std::string> suits{
 	{1, "Diamonds"},
 	{2, "Hearts"},
@@ -20,10 +16,10 @@ const std::unordered_map <int, std::string> ranks{
 	{8, "Eight"},
 	{9, "Nine"},
 	{10, "Ten"},
-	{11, "Jack"},
-	{12, "Queen"},
-	{13, "King"},
-	{14, "Ace"},
+	{2, "Jack"},
+	{3, "Queen"},
+	{4, "King"},
+	{11, "Ace"},
 };
 
 class Card
