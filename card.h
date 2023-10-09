@@ -31,6 +31,8 @@ class Card
 private:
 	std::string suit;
 	std::string rank;
+	int suitValue;
+	int rankValue;
 public:
 	Card();
 
@@ -40,9 +42,13 @@ public:
 	
 	Card operator=(const Card& other);
 
-	std::string getSuit();
+	const std::string& getSuit();
 
-	std::string getRank();
+	const std::string& getRank();
+
+	const int& getSuitValue();
+
+	const int& getRankValue();
 
 	friend std::ostream& operator<<(std::ostream& out, Card& card);
 
@@ -50,3 +56,13 @@ public:
 
 	~Card();
 };
+
+inline int operator==(Card left, Card right) {
+	if (left.getRankValue() - right.getRankValue() > 0) {
+		return 1;
+	}
+	else if (left.getRankValue() - right.getRankValue() < 0) {
+		return -1;
+	}
+	else return 0;
+}

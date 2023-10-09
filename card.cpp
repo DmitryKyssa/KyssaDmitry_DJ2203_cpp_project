@@ -1,10 +1,17 @@
 #include "card.h"
 
-Card::Card() {}
+Card::Card() {
+	suitValue = 0;
+	rankValue = 0;
+}
 
 Card::Card(int _suit, int _rank) {
 	/*this->suit = allSuits[_suit];
 	this->rank = allRanks[_rank];*/
+
+	suitValue = _suit;
+	rankValue = _rank;
+
 	if (suits.find(_suit) != suits.end()) {
 		this->suit = suits.at(_suit);
 	}
@@ -24,6 +31,8 @@ Card Card::operator=(const Card& other)
 {
 	this->suit = other.suit;
 	this->rank = other.rank;
+	this->rankValue = other.rankValue;
+	this->suitValue = other.suitValue;
 	return *this;
 }
 
@@ -31,11 +40,17 @@ Card::Card(const Card& copy)
 {
 	this->rank = copy.rank;
 	this->suit = copy.suit;
+	this->rankValue = copy.rankValue;
+	this->suitValue = copy.suitValue;
 }
 
-std::string Card::getSuit() { return this->suit; }
+const std::string& Card::getSuit() { return this->suit; }
 
-std::string Card::getRank() { return this->rank; }
+const std::string& Card::getRank() { return this->rank; }
+
+const int& Card::getSuitValue() { return this->suitValue; }
+
+const int& Card::getRankValue() { return this->rankValue; }
 
 std::ostream& operator<<(std::ostream& out, Card& card) {
 	return out << card.getRank() << " " << card.getSuit() << std::endl;
@@ -48,17 +63,19 @@ std::istream& operator>>(std::istream& in, Card& card)
 	std::cout << "Suit: ";
 	in >> card.suit;
 
-	return in;
-}
+	for (auto& it_suits : suits) {
+		if (it_suits.second == card.suit) {
+			card.suitValue = it_suits.first;
+		}
+	}
 
-int operator==(Card& left, Card& right) {
-	if (left.getRank() == right.getRank()) {
-		return 0;
+	for (auto& it_ranks : ranks) {
+		if (it_ranks.second == card.rank) {
+			card.rankValue = it_ranks.first;
+		}
 	}
-	else if (left.getRank() > right.getRank()) {
-		return 1;
-	}
-	else return -1;
+
+	return in;
 }
 
 Card::~Card() {}

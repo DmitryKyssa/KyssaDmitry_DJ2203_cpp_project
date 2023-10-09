@@ -24,7 +24,7 @@ int main()
 	usedCards.push_back(cardOnTable);
 	Character::getInstance<Deck>()->deck.pop_back();
 
-	//DEMO 
+	//DEMO lab3 with cards
 
 	/*Card tmp;
 	std::cin >> tmp;
@@ -36,10 +36,14 @@ int main()
 	Card assigned = copy;
 	std::cout << assigned;
 
-	std::cout << (&assigned == &copy) << std::endl;
+	Card ace(1, 14);
+	std::cout << ace;
+
+	int comparison = assigned == ace;
+
+	std::cout << comparison << std::endl;
 
 	std::cin.get();*/
-
 
 	std::cout << "Press any key to start the game." << std::endl;
 
