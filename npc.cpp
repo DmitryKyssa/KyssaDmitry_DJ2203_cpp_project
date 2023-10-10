@@ -1,5 +1,6 @@
-#include "npc.h"
-#include "deck.h"
+//#include "npc.h"
+//#include "deck.h"
+#include "game_manager.h"
 
 NPC::NPC()
 {
@@ -19,7 +20,10 @@ void NPC::move(Card& cOT, int counter)
 
 	if (cOT.getSuit() == "") {
 		draw();
-		move(cOT, counter);
+		move(cOT, counter++);
+	}
+	else if (cOT.getSuit() == "" && counter > 0) {
+		pass();
 	}
 
 	canMove = false;
@@ -45,11 +49,13 @@ void NPC::draw()
 {
 	player_cards.push_back(Character::getInstance<Deck>()->deck.back());
 	Character::getInstance<Deck>()->deck.pop_back();
+	//refreshScreen();
 }
 
 void NPC::pass()
 {
 	canMove = false;
+	return;
 }
 
 bool NPC::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)

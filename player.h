@@ -16,7 +16,7 @@ public:
 
 	void move(Card& cOT, std::vector<Card> uC,int counter);
 
-	Card select(Card& cOT);
+	Card select(Card& cOT, std::vector<Card> uC, int numOfEntries);
 
 	void draw();
 

@@ -1,7 +1,8 @@
-#include "player.h"
+//#include "player.h"
+//#include "card.h"
+//#include "deck.h"
 #include <vector>
-#include "card.h"
-#include "deck.h"
+#include "game_manager.h"
 
 Player::Player()
 {
@@ -49,14 +50,14 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries)
 	switch (choice)
 	{
 	case 1:
-		cOT = select(cOT);
+		cOT = select(cOT, uC, numOfEntries);
 		numOfEntries++;
-		//move(cOT, numOfEntries);
+		move(cOT, uC, numOfEntries);
 		canMove = false;
 		break;
 	case 2:
 		draw();
-		Character::getInstance<Player>()->print<Player>();
+		refreshScreen(cOT, uC);
 		//move(cOT, numOfEntries);
 		break;
 	case 3:
@@ -65,15 +66,21 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries)
 	}
 }
 
-Card Player::select(Card& cOT)
+Card Player::select(Card& cOT, std::vector<Card> uC, int numOfEntries)
 {
 	int input = 1;
 	Card tmp;
 	do
 	{
 		std::cout << "Please, select a card" << std::endl;
-		std::cout << "Enter a number from 1 (first card) to " << player_cards.size() << " (last card):" << std::endl;
+		std::cout << "Enter a number from 1 (first card) to " << player_cards.size() << " (last card)." << "Or 'D' to draw a card." << std::endl;
 		std::cin >> input;
+
+		if (input == 'D' || input == 'd') {
+			draw();
+			move(cOT, uC, numOfEntries++);
+		}
+
 		tmp = player_cards.at(input - 1);
 	} while (!checkIfRangeIsCorrect(input, cOT, tmp));
 

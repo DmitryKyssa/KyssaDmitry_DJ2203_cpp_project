@@ -7,7 +7,7 @@
 #include "deck.h"
 #include "windows.h"
 
-void refreshScreen(Card& cOT, std::vector<Card>& uC) {
+inline void refreshScreen(Card& cOT, std::vector<Card>& uC) {
 	system("cls");
 
 	std::cout << "Player's cards:" << std::endl;
@@ -39,17 +39,19 @@ void refreshScreen(Card& cOT, std::vector<Card>& uC) {
 
 	std::cout << std::endl;
 
-	int counter = 0;
+	int playerCounter = 0;
 
 	if (Character::getInstance<Player>()->canMove) {
-		Character::getInstance<Player>()->move(cOT, uC, counter);
+		Character::getInstance<Player>()->move(cOT, uC, playerCounter);
 		Character::getInstance<NPC>()->canMove = true;
 	}
 
 	uC.push_back(cOT);
 
+	int npcCounter = 0;
+
 	if (Character::getInstance<NPC>()->canMove) {
-		Character::getInstance<NPC>()->move(cOT, counter);
+		Character::getInstance<NPC>()->move(cOT, npcCounter);
 		Character::getInstance<Player>()->canMove = true;
 	}
 
