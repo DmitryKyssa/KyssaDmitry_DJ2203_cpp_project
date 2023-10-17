@@ -52,3 +52,5 @@ ipch/
 
 #Debug files
 Debug/
+
+*.win
