@@ -6,9 +6,6 @@ Card::Card() {
 }
 
 Card::Card(int _suit, int _rank) {
-	/*this->suit = allSuits[_suit];
-	this->rank = allRanks[_rank];*/
-
 	suitValue = _suit;
 	rankValue = _rank;
 
