@@ -14,7 +14,6 @@ Player::Player()
 Player* Player::Instance = nullptr;
 
 //TODO after draw player can or select, or pass
-//TODO push back selected cards to used cards
 void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries)
 {
 	int choice = 1;

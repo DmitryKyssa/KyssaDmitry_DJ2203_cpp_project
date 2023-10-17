@@ -17,11 +17,16 @@ void NPC::move(Card& cOT, int counter)
 {
 	cOT = select(cOT);
 
-	if (cOT.getSuit() == "") {
+	if (cOT.getSuit() == "" && counter == 0) {
 		draw();
 		move(cOT, counter++);
 	}
-	else if (cOT.getSuit() == "" && counter > 0) {
+
+	if (cOT.getRank() == "Eight" || cOT.getRank() == "Ace") {
+		move(cOT, counter);
+	}
+	
+	if (cOT.getSuit() == "" && counter > 0) {
 		pass();
 	}
 
