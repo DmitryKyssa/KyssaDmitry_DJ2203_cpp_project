@@ -1,6 +1,3 @@
-//#include "player.h"
-//#include "card.h"
-//#include "deck.h"
 #include <vector>
 #include "game_manager.h"
 
@@ -97,6 +94,7 @@ void Player::draw()
 void Player::pass()
 {
 	canMove = false;
+	return;
 }
 
 bool Player::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
@@ -117,6 +115,13 @@ bool Player::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
 		std::cout << "Incorrect input! Enter a number from 1 to " << player_cards.size() << std::endl;
 		return false;
 	}
+}
+
+int Player::countScore() {
+	for (Card& it : Character::getInstance<Player>()->player_cards) {
+		score += it.getRankValue();
+	}
+	return score;
 }
 
 Player::~Player()

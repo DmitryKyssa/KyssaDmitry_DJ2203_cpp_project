@@ -5,6 +5,7 @@
 
 const int INITIAL_NUM_PLAYER_CARDS = 4;
 
+//TODO research expediency/utility of using an abstract or template class named Character
 class Character {
 public:
 	template <typename T>
@@ -15,13 +16,13 @@ public:
 
 	//virtual void move(Card& cOT, int counter) = 0;
 
-	virtual Card select(Card& cOT) = 0;
+	//virtual Card select(Card& cOT) = 0;
 
-	virtual void draw() = 0;
+	//virtual void draw() = 0;
 
-	virtual void pass() = 0;
+	//virtual void pass() = 0;
 
-	virtual bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected) = 0;
+	//virtual bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected) = 0;
 };
 
 template<typename T>

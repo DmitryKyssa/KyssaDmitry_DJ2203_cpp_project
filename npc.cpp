@@ -1,5 +1,3 @@
-//#include "npc.h"
-//#include "deck.h"
 #include "game_manager.h"
 
 NPC::NPC()
@@ -14,6 +12,7 @@ NPC::NPC()
 
 NPC* NPC::Instance = nullptr;
 
+//TODO improve logic of making a move
 void NPC::move(Card& cOT, int counter)
 {
 	cOT = select(cOT);
@@ -61,6 +60,14 @@ void NPC::pass()
 bool NPC::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
 {
 	return false;
+}
+
+int NPC::countScore()
+{
+	for (Card& it : Character::getInstance<NPC>()->player_cards) {
+		score += it.getRankValue();
+	}
+	return score;
 }
 
 NPC::~NPC()

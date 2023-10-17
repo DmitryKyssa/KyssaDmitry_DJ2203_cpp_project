@@ -5,8 +5,9 @@
 class Player : public Character
 {
 public:
-	
 	static Player* Instance;
+
+	int score = 0;
 
 	Player();
 
@@ -14,11 +15,13 @@ public:
 
 	bool canMove;
 
-	void move(Card& cOT, std::vector<Card> uC,int counter);
+	void move(Card& cOT, std::vector<Card> uC, int counter);
 
 	Card select(Card& cOT, std::vector<Card> uC, int numOfEntries);
 
 	void draw();
+
+	int countScore();
 
 	void pass();
 
