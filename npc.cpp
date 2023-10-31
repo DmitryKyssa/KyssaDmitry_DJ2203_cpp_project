@@ -17,6 +17,10 @@ void NPC::move(Card& cOT, int counter)
 {
 	cOT = select(cOT);
 
+	if (cOT.getSuit() == "" && counter > 0) {
+		pass();
+	}
+
 	if (cOT.getSuit() == "" && counter == 0) {
 		draw();
 		move(cOT, counter++);
@@ -25,10 +29,8 @@ void NPC::move(Card& cOT, int counter)
 	if (cOT.getRank() == "Eight" || cOT.getRank() == "Ace") {
 		move(cOT, counter);
 	}
-	
-	if (cOT.getSuit() == "" && counter > 0) {
-		pass();
-	}
+
+	std::cout << "NPC moves with " << cOT << std::endl;
 
 	canMove = false;
 }
@@ -65,14 +67,6 @@ void NPC::pass()
 bool NPC::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
 {
 	return false;
-}
-
-int NPC::countScore()
-{
-	for (Card& it : Character::getInstance<NPC>()->player_cards) {
-		score += it.getRankValue();
-	}
-	return score;
 }
 
 NPC::~NPC()

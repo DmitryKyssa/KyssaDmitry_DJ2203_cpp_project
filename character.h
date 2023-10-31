@@ -14,15 +14,11 @@ public:
 	template<typename T>
 	void print();
 
-	//virtual void move(Card& cOT, int counter) = 0;
+	template<typename T>
+	int countScore();
 
-	//virtual Card select(Card& cOT) = 0;
-
-	//virtual void draw() = 0;
-
-	//virtual void pass() = 0;
-
-	//virtual bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected) = 0;
+protected:
+	int score = 0;
 };
 
 template<typename T>
@@ -41,4 +37,12 @@ inline void Character::print()
 	for (Card& it : Character::getInstance<T>()->player_cards) {
 		std::cout << it;
 	}
+}
+
+template<typename T>
+inline int Character::countScore() {
+	for (Card& it : Character::getInstance<T>()->player_cards) {
+		score += it.getRankValue();
+	}
+	return score;
 }

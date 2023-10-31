@@ -116,13 +116,6 @@ bool Player::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
 	}
 }
 
-int Player::countScore() {
-	for (Card& it : Character::getInstance<Player>()->player_cards) {
-		score += it.getRankValue();
-	}
-	return score;
-}
-
 Player::~Player()
 {
 }

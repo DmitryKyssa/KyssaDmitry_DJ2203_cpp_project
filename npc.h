@@ -11,8 +11,6 @@ public:
 
 	std::vector<Card> player_cards;
 
-	int score = 0;
-
 	bool canMove;
 
 	void move(Card& cOT, int counter);
@@ -24,8 +22,6 @@ public:
 	void pass();
 
 	bool checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected);
-
-	int countScore();
 
 	~NPC();
 };

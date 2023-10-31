@@ -48,9 +48,9 @@ int main()
 				Character::getInstance<NPC>()->player_cards.empty()) {
 				isGame = false;
 
-				std::cout << Character::getInstance<Player>()->countScore() << std::endl;
+				std::cout << Character::getInstance<Player>()->countScore<Player>() << std::endl;
 
-				std::cout << Character::getInstance<NPC>()->countScore() << std::endl;
+				std::cout << Character::getInstance<NPC>()->countScore<NPC>() << std::endl;
 			}
 		} while (isGame);
 	}
