@@ -8,6 +8,7 @@ int main()
 	Character::getInstance<Deck>()->shuffling();
 
 	bool isGame = false;
+	bool wasDrawn = false;
 
 	Character::getInstance<Player>();
 	Character::getInstance<NPC>();
@@ -43,7 +44,7 @@ int main()
 	if (std::cin.get()) {
 		isGame = true;
 		do{
-			refreshScreen(cardOnTable, usedCards);
+			refreshScreen(cardOnTable, usedCards, wasDrawn);
 			if (Character::getInstance<Player>()->player_cards.empty() ||
 				Character::getInstance<NPC>()->player_cards.empty()) {
 				isGame = false;

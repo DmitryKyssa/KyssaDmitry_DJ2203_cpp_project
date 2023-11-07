@@ -13,7 +13,7 @@ public:
 
 	bool canMove;
 
-	void move(Card& cOT, std::vector<Card> uC, int counter);
+	void move(Card& cOT, std::vector<Card> uC, int counter, bool wasDrawn);
 
 	Card select(Card& cOT, std::vector<Card> uC, int numOfEntries);
 

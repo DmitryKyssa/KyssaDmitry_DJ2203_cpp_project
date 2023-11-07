@@ -14,10 +14,11 @@ Player::Player()
 Player* Player::Instance = nullptr;
 
 //TODO after draw player can or select, or pass
-void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries)
+void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries, bool wasDrawn)
 {
 	int choice = 1;
-	if (cOT.getRank() == "Eight") {
+	if (cOT.getRank() == "Eight" || cOT.getRank() == "Ace") {
+		std::cout << "On table is eight or ace" << std::endl;
 		do
 		{
 			std::cout << "\nChoose an option:\n"
@@ -27,7 +28,19 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries)
 			std::cin >> choice;
 		} while (!(choice >= 1 && choice <= 2));
 	}
-	else if (cOT.getRank() != "Eight" && numOfEntries == 0) {
+	else if (wasDrawn) {
+		std::cout << "after drawing" << std::endl;
+		do
+		{
+			std::cout << "\nChoose an option:\n"
+				<< "1) Make a move\n"
+				<< "3) Pass\n"
+				<< "Enter 1 or 3: " << std::endl;
+			std::cin >> choice;
+		} while (!(choice >= 1 && choice <= 3) && choice == 2);
+	}
+	else if ((cOT.getRank() != "Eight" || cOT.getRank() != "Ace") && numOfEntries == 0) {
+		std::cout << "On table is not eight or ace" << std::endl;
 		do
 		{
 			std::cout << "\nChoose an option:\n"
@@ -38,7 +51,7 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries)
 			std::cin >> choice;
 		} while (!(choice >= 1 && choice <= 3));
 	}
-	else if (cOT.getRank() != "Eight" && numOfEntries > 0) {
+	else if ((cOT.getRank() != "Eight" || cOT.getRank() != "Ace") && numOfEntries > 0) {
 		canMove = false;
 		return;
 	}
@@ -48,13 +61,15 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries)
 	case 1:
 		cOT = select(cOT, uC, numOfEntries);
 		numOfEntries++;
-		move(cOT, uC, numOfEntries);
+		wasDrawn = false;
+		move(cOT, uC, numOfEntries, wasDrawn);
 		canMove = false;
 		break;
 	case 2:
 		draw();
-		refreshScreen(cOT, uC);
-		//move(cOT, numOfEntries);
+		wasDrawn = true;
+		//move(cOT, uC, numOfEntries, wasDrawn);
+		refreshScreen(cOT, uC, wasDrawn);
 		break;
 	case 3:
 		pass();
@@ -74,7 +89,7 @@ Card Player::select(Card& cOT, std::vector<Card> uC, int numOfEntries)
 
 		if (input == 'D' || input == 'd') {
 			draw();
-			move(cOT, uC, numOfEntries++);
+			move(cOT, uC, numOfEntries++, true);
 		}
 
 		tmp = player_cards.at(input - 1);

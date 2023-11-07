@@ -23,14 +23,18 @@ void NPC::move(Card& cOT, int counter)
 
 	if (cOT.getSuit() == "" && counter == 0) {
 		draw();
-		move(cOT, counter++);
-	}
-
-	if (cOT.getRank() == "Eight" || cOT.getRank() == "Ace") {
+		counter++;
 		move(cOT, counter);
 	}
 
-	std::cout << "NPC moves with " << cOT << std::endl;
+	if (cOT.getRank() == "Eight" || cOT.getRank() == "Ace") {
+		counter++;
+		move(cOT, counter);
+	}
+
+	if (counter == 0) {
+		std::cout << "NPC moves with " << cOT << std::endl;
+	}
 
 	canMove = false;
 }

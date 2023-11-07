@@ -5,7 +5,6 @@
 
 const int INITIAL_NUM_PLAYER_CARDS = 4;
 
-//TODO research expediency/utility of using an abstract or template class named Character
 class Character {
 public:
 	template <typename T>
@@ -34,8 +33,8 @@ static inline T* Character::getInstance()
 template<typename T>
 inline void Character::print()
 {
-	for (Card& it : Character::getInstance<T>()->player_cards) {
-		std::cout << it;
+	for (size_t i = 0; i < Character::getInstance<T>()->player_cards.size(); i++) {
+		std::cout << i + 1 << ") " << Character::getInstance<T>()->player_cards.at(i);
 	}
 }
 

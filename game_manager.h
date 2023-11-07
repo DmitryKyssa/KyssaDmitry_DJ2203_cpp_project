@@ -7,11 +7,16 @@
 #include "deck.h"
 #include "windows.h"
 
-inline void refreshScreen(Card& cOT, std::vector<Card>& uC) {
+inline void cardsEffects() {
+
+}
+
+inline void refreshScreen(Card& cOT, std::vector<Card>& uC, bool wasDrawn) {
 	system("cls");
 
 	std::cout << "Player's cards:" << std::endl;
-	Character::getInstance<Player>()->print <Player>();
+	Player::getInstance<Player>()->print<Player>();
+	//Character::getInstance<Player>()->print <Player>();
 
 	std::cout << std::endl;
 
@@ -21,7 +26,8 @@ inline void refreshScreen(Card& cOT, std::vector<Card>& uC) {
 	std::cout << std::endl;
 
 	std::cout << "NPC's cards:" << std::endl;
-	Character::getInstance<NPC>()->print <NPC>();
+	NPC::getInstance<NPC>()->print<NPC>();
+	//Character::getInstance<NPC>()->print <NPC>();
 
 	std::cout << std::endl;
 
@@ -29,7 +35,7 @@ inline void refreshScreen(Card& cOT, std::vector<Card>& uC) {
 	for (Card& it : Character::getInstance<Deck>()->deck) {
 		std::cout << it;
 	}
-
+	
 	std::cout << std::endl;
 
 	std::cout << "Used cards:" << std::endl;
@@ -40,19 +46,20 @@ inline void refreshScreen(Card& cOT, std::vector<Card>& uC) {
 	std::cout << std::endl;
 
 	int playerCounter = 0;
+	bool playerDrewCard = wasDrawn;
 
-	if (Character::getInstance<Player>()->canMove) {
-		Character::getInstance<Player>()->move(cOT, uC, playerCounter);
-		Character::getInstance<NPC>()->canMove = true;
+	if (Player::getInstance<Player>()->canMove) {
+		Player::getInstance<Player>()->move(cOT, uC, playerCounter, playerDrewCard);
+		NPC::getInstance<NPC>()->canMove = true;
 	}
 
 	uC.push_back(cOT);
 
 	int npcCounter = 0;
 
-	if (Character::getInstance<NPC>()->canMove) {
-		Character::getInstance<NPC>()->move(cOT, npcCounter);
-		Character::getInstance<Player>()->canMove = true;
+	if (NPC::getInstance<NPC>()->canMove) {
+		NPC::getInstance<NPC>()->move(cOT, npcCounter);
+		Player::getInstance<Player>()->canMove = true;
 	}
 
 	uC.push_back(cOT);
