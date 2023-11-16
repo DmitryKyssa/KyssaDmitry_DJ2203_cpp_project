@@ -1,3 +1,10 @@
+/**
+* Meta
+* @brief Kyssa_Dmitry_DJ2203_cpp_project
+* @author Kyssa Dmitry
+* @date Sep-Dec 2023
+*/
+
 #include "game_manager.h"
 
 //TODO add logic of making pase(hod)

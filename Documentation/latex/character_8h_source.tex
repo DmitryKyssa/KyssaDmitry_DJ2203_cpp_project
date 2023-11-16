@@ -1,0 +1,52 @@
+\doxysection{character.\+h}
+\hypertarget{character_8h_source}{}\label{character_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ "{}card.h"{}}}
+\DoxyCodeLine{00005\ }
+\DoxyCodeLine{00006\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\ INITIAL\_NUM\_PLAYER\_CARDS\ =\ 4;}
+\DoxyCodeLine{00007\ }
+\DoxyCodeLine{00017\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_character}{Character}}\ \{}
+\DoxyCodeLine{00018\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keyword}{template}\ <\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keyword}{static}\ T*\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{getInstance}}();}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_character_aa7a2b97db3f6ec260083f58ce8d54d25}{print}}();}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a9c876f52757b7de6b8ebcc695c6ce51b}{countScore}}();}
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keyword}{protected}:}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_abc4b0e1dbe73d5c23ca0b33f09e07624}{score}}\ =\ 0;}
+\DoxyCodeLine{00044\ \};}
+\DoxyCodeLine{00045\ }
+\DoxyCodeLine{00046\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00047\ \textcolor{keyword}{static}\ \textcolor{keyword}{inline}\ T*\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{Character::getInstance}}()}
+\DoxyCodeLine{00048\ \{}
+\DoxyCodeLine{00049\ \ \ \ \ \textcolor{keywordflow}{if}\ (T::Instance\ ==\ \textcolor{keyword}{nullptr})\ \{}
+\DoxyCodeLine{00050\ \ \ \ \ \ \ \ \ T::Instance\ =\ \textcolor{keyword}{new}\ T();}
+\DoxyCodeLine{00051\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ T::Instance;}
+\DoxyCodeLine{00052\ \ \ \ \ \}}
+\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ T::Instance;}
+\DoxyCodeLine{00054\ \}}
+\DoxyCodeLine{00055\ }
+\DoxyCodeLine{00056\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00057\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_character_aa7a2b97db3f6ec260083f58ce8d54d25}{Character::print}}()}
+\DoxyCodeLine{00058\ \{}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordflow}{for}\ (\textcolor{keywordtype}{size\_t}\ i\ =\ 0;\ i\ <\ Character::getInstance<T>()-\/>player\_cards.size();\ i++)\ \{}
+\DoxyCodeLine{00060\ \ \ \ \ \ \ \ \ std::cout\ <<\ i\ +\ 1\ <<\ \textcolor{stringliteral}{"{})\ "{}}\ <<\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{Character::getInstance<T>}}()-\/>player\_cards.at(\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{i}});}
+\DoxyCodeLine{00061\ \ \ \ \ \}}
+\DoxyCodeLine{00062\ \}}
+\DoxyCodeLine{00063\ }
+\DoxyCodeLine{00064\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00065\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a9c876f52757b7de6b8ebcc695c6ce51b}{Character::countScore}}()\ \{}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordflow}{for}\ (\mbox{\hyperlink{class_card}{Card}}\&\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{it}}\ :\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{Character::getInstance<T>}}()-\/>player\_cards)\ \{}
+\DoxyCodeLine{00067\ \ \ \ \ \ \ \ \ \mbox{\hyperlink{class_character_abc4b0e1dbe73d5c23ca0b33f09e07624}{score}}\ +=\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{it}}.getRankValue();}
+\DoxyCodeLine{00068\ \ \ \ \ \}}
+\DoxyCodeLine{00069\ \ \ \ \ \textcolor{keywordflow}{return}\ \mbox{\hyperlink{class_character_abc4b0e1dbe73d5c23ca0b33f09e07624}{score}};}
+\DoxyCodeLine{00070\ \}}
+
+\end{DoxyCode}

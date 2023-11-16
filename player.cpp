@@ -85,7 +85,7 @@ Card Player::select(Card& cOT, std::vector<Card> uC, int numOfEntries)
 
 		if (input == 'D' || input == 'd') {
 			draw();
-			move(cOT, uC, numOfEntries++, true);
+			move(cOT, numOfEntries++, true);
 		}
 
 		tmp = player_cards.at(input - 1);

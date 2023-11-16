@@ -7,6 +7,21 @@
 #include "deck.h"
 #include "windows.h"
 
+/**
+* \brief A header that provides game logic and rules
+*/
+/**
+* Meta
+* \brief Kyssa_Dmitry_DJ2203_cpp_project
+* \author Kyssa Dmitry
+* \date Sep-Dec 2023
+*/
+
+/**
+* \brief Method for adding card(s) from #deck to #player_cards
+* \param[in] numOfTakenCards Number of cards for taking
+* \param[in] Type Pointer to class owning #player_cards
+*/
 template<typename T>
 void takeCards(unsigned int numOfTakenCards, T* Type) {
 	for (unsigned int i = 0; i < numOfTakenCards; i++) {
@@ -15,8 +30,13 @@ void takeCards(unsigned int numOfTakenCards, T* Type) {
 	}
 }
 
+/**
+* \brief Method that defines special cards effect
+* \param[in] cOT Current card on table
+* \param[in] Type Pointer to class owning #player_cards
+*/
 template<typename T>
-void cardsEffects(Card& cOT, std::vector<Card>& uC, T* Type) {
+void cardsEffects(Card& cOT, T* Type) {
 	if (cOT.getRank() == "Six") {
 		takeCards<T>(1u, Type);
 		return;
@@ -31,6 +51,12 @@ void cardsEffects(Card& cOT, std::vector<Card>& uC, T* Type) {
 	}
 }
 
+/**
+* \brief Method for updating console 
+* \param[in] cOT Current card on table
+* \param[in] uC Vector of used cards
+* \param[in] wasDrawn Flag of card drawing from #deck
+*/
 inline void refreshScreen(Card& cOT, std::vector<Card>& uC, bool wasDrawn) {
 	system("cls");
 
@@ -49,11 +75,11 @@ inline void refreshScreen(Card& cOT, std::vector<Card>& uC, bool wasDrawn) {
 
 	std::cout << std::endl;
 
-	std::cout << "Cards in deck:" << std::endl;
+	/*std::cout << "Cards in deck:" << std::endl;
 	for (Card& it : Character::getInstance<Deck>()->deck) {
 		std::cout << it;
-	}
-	
+	}*/
+
 	std::cout << std::endl;
 
 	std::cout << "Used cards:" << std::endl;
@@ -73,7 +99,7 @@ inline void refreshScreen(Card& cOT, std::vector<Card>& uC, bool wasDrawn) {
 
 	uC.push_back(cOT);
 
-	cardsEffects<NPC>(cOT, uC, NPC::getInstance<NPC>());
+	cardsEffects<NPC>(cOT, NPC::getInstance<NPC>());
 
 	int npcCounter = 0;
 
@@ -84,7 +110,7 @@ inline void refreshScreen(Card& cOT, std::vector<Card>& uC, bool wasDrawn) {
 
 	uC.push_back(cOT);
 
-	cardsEffects<Player>(cOT, uC, Player::getInstance<Player>());
+	cardsEffects<Player>(cOT, Player::getInstance<Player>());
 
 	Sleep(2000);
 }

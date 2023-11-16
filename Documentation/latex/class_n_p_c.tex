@@ -1,0 +1,81 @@
+\doxysection{NPC Class Reference}
+\hypertarget{class_n_p_c}{}\label{class_n_p_c}\index{NPC@{NPC}}
+
+
+Kyssa\+\_\+\+Dmitry\+\_\+\+DJ2203\+\_\+cpp\+\_\+project.  
+
+
+
+
+{\ttfamily \#include $<$npc.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_n_p_c_a96c299c4e3996f1135813870e40037f4}\label{class_n_p_c_a96c299c4e3996f1135813870e40037f4} 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{void}} {\bfseries move} (\mbox{\hyperlink{class_card}{Card}} \&\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{c\+OT}}, \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{int}} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{counter}})
+\item 
+\Hypertarget{class_n_p_c_a4d88b9db7afe9e492381524703baf7fb}\label{class_n_p_c_a4d88b9db7afe9e492381524703baf7fb} 
+\mbox{\hyperlink{class_card}{Card}} {\bfseries select} (\mbox{\hyperlink{class_card}{Card}} \&\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{c\+OT}})
+\item 
+\Hypertarget{class_n_p_c_a2756da4dec71ef97d67a90a42be2ea1f}\label{class_n_p_c_a2756da4dec71ef97d67a90a42be2ea1f} 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{void}} {\bfseries draw} ()
+\item 
+\Hypertarget{class_n_p_c_a0ae35f6b34565d8264f57b7713c86826}\label{class_n_p_c_a0ae35f6b34565d8264f57b7713c86826} 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{void}} {\bfseries pass} ()
+\item 
+\Hypertarget{class_n_p_c_af048bc9ba1ba40a290b5d588a4aa9a91}\label{class_n_p_c_af048bc9ba1ba40a290b5d588a4aa9a91} 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{bool}} {\bfseries check\+If\+Range\+Is\+Correct} (\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{int}} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{\+\_\+input}}, \mbox{\hyperlink{class_card}{Card}} \&\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{on\+Table}}, \mbox{\hyperlink{class_card}{Card}} \&\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{selected}})
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions inherited from \mbox{\hyperlink{class_character}{Character}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{typename}} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{T}} $>$ }\\\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{void}} {\bfseries print} ()
+\begin{DoxyCompactList}\small\item\em Method for printing T class objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{typename}} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{T}} $>$ }\\\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{int}} \mbox{\hyperlink{class_character_a9c876f52757b7de6b8ebcc695c6ce51b}{count\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Method for counting score based on cards rank values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_n_p_c_a42fc220686aa74144f7fbd18738b3651}\label{class_n_p_c_a42fc220686aa74144f7fbd18738b3651} 
+std\+::vector$<$ \mbox{\hyperlink{class_card}{Card}} $>$ {\bfseries player\+\_\+cards}
+\item 
+\Hypertarget{class_n_p_c_a5383eaa649cca463373489abc86c3805}\label{class_n_p_c_a5383eaa649cca463373489abc86c3805} 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{bool}} {\bfseries can\+Move}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_n_p_c_a23fe9cf81082bdf00a0c33a5d602f775}\label{class_n_p_c_a23fe9cf81082bdf00a0c33a5d602f775} 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{static}} \mbox{\hyperlink{class_n_p_c}{NPC}} \texorpdfstring{$\ast$}{*} {\bfseries Instance} = \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{nullptr}}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Additional Inherited Members}
+\doxysubsection*{Static Public Member Functions inherited from \mbox{\hyperlink{class_character}{Character}}}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Static method for providing singleton functionality. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename T $>$ }\\static T \texorpdfstring{$\ast$}{*} {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Protected Attributes inherited from \mbox{\hyperlink{class_character}{Character}}}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{int}} {\bfseries score} = 0
+\begin{DoxyCompactList}\small\item\em Initial value for int \doxylink{class_character_a9c876f52757b7de6b8ebcc695c6ce51b}{count\+Score()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kyssa\+\_\+\+Dmitry\+\_\+\+DJ2203\+\_\+cpp\+\_\+project. 
+
+Meta \begin{DoxyAuthor}{Author}
+Kyssa Dmitry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Sep-\/\+Dec 2023 
+\end{DoxyDate}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+npc.\+h\item 
+npc.\+cpp\end{DoxyCompactItemize}

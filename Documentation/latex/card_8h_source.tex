@@ -1,0 +1,70 @@
+\doxysection{card.\+h}
+\hypertarget{card_8h_source}{}\label{card_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <iostream>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <unordered\_map>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00010\ \textcolor{keyword}{const}\ std::unordered\_map\ <int,\ std::string>\ suits\{}
+\DoxyCodeLine{00011\ \ \ \ \ \{1,\ \textcolor{stringliteral}{"{}Diamonds"{}}\},}
+\DoxyCodeLine{00012\ \ \ \ \ \{2,\ \textcolor{stringliteral}{"{}Hearts"{}}\},}
+\DoxyCodeLine{00013\ \ \ \ \ \{3,\ \textcolor{stringliteral}{"{}Clubs"{}}\},}
+\DoxyCodeLine{00014\ \ \ \ \ \{4,\ \textcolor{stringliteral}{"{}Spades"{}}\}}
+\DoxyCodeLine{00015\ \};}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00020\ \textcolor{keyword}{const}\ std::unordered\_map\ <int,\ std::string>\ ranks\{}
+\DoxyCodeLine{00021\ \ \ \ \ \{6,\ \textcolor{stringliteral}{"{}Six"{}}\},}
+\DoxyCodeLine{00022\ \ \ \ \ \{7,\ \textcolor{stringliteral}{"{}Seven"{}}\},}
+\DoxyCodeLine{00023\ \ \ \ \ \{8,\ \textcolor{stringliteral}{"{}Eight"{}}\},}
+\DoxyCodeLine{00024\ \ \ \ \ \{9,\ \textcolor{stringliteral}{"{}Nine"{}}\},}
+\DoxyCodeLine{00025\ \ \ \ \ \{10,\ \textcolor{stringliteral}{"{}Ten"{}}\},}
+\DoxyCodeLine{00026\ \ \ \ \ \{2,\ \textcolor{stringliteral}{"{}Jack"{}}\},}
+\DoxyCodeLine{00027\ \ \ \ \ \{3,\ \textcolor{stringliteral}{"{}Queen"{}}\},}
+\DoxyCodeLine{00028\ \ \ \ \ \{4,\ \textcolor{stringliteral}{"{}King"{}}\},}
+\DoxyCodeLine{00029\ \ \ \ \ \{11,\ \textcolor{stringliteral}{"{}Ace"{}}\},}
+\DoxyCodeLine{00030\ \};}
+\DoxyCodeLine{00031\ }
+\DoxyCodeLine{00042\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_card}{Card}}}
+\DoxyCodeLine{00043\ \{}
+\DoxyCodeLine{00044\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00045\ \ \ \ \ std::string\ suit;\ }
+\DoxyCodeLine{00046\ \ \ \ \ std::string\ rank;}
+\DoxyCodeLine{00047\ \ \ \ \ \textcolor{keywordtype}{int}\ suitValue;}
+\DoxyCodeLine{00048\ \ \ \ \ \textcolor{keywordtype}{int}\ rankValue;}
+\DoxyCodeLine{00049\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00053\ \ \ \ \ \mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}}();}
+\DoxyCodeLine{00054\ }
+\DoxyCodeLine{00060\ \ \ \ \ \mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}}(\textcolor{keywordtype}{int}\ \_suit,\ \textcolor{keywordtype}{int}\ \_rank);}
+\DoxyCodeLine{00061\ }
+\DoxyCodeLine{00066\ \ \ \ \ \mbox{\hyperlink{class_card_a783f5854cbe8c183ee3d4414c01472c0}{Card}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_card}{Card}}\&\ copy);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \mbox{\hyperlink{class_card}{Card}}\ \mbox{\hyperlink{class_card_ac079e96cbc10f289cd78400f96bc2a25}{operator=}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_card}{Card}}\&\ other);}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00079\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_a7b940ceac905a7376f41e237b82dae64}{getSuit}}();}
+\DoxyCodeLine{00080\ }
+\DoxyCodeLine{00085\ \ \ \ \ \textcolor{keyword}{const}\ std::string\&\ \mbox{\hyperlink{class_card_adafcc079ae45697a1c3f04250fabb427}{getRank}}();}
+\DoxyCodeLine{00086\ }
+\DoxyCodeLine{00091\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{class_card_ac673b7e4dd84789d1d5a1381e29b3d98}{getSuitValue}}();}
+\DoxyCodeLine{00092\ }
+\DoxyCodeLine{00097\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{int}\&\ \mbox{\hyperlink{class_card_a4074462e44801969657d2f4941137ebf}{getRankValue}}();}
+\DoxyCodeLine{00098\ }
+\DoxyCodeLine{00104\ \ \ \ \ \textcolor{keyword}{friend}\ std::ostream\&\ \mbox{\hyperlink{class_card_a8b2ee6ef6890f4ab4bc1e7c840b74e48}{operator<<}}(std::ostream\&\ out,\ \mbox{\hyperlink{class_card}{Card}}\&\ card);}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00111\ \ \ \ \ \textcolor{keyword}{friend}\ std::istream\&\ \mbox{\hyperlink{class_card_afb96aa7066e2e890c93c6049f9e5e6a8}{operator>>}}(std::istream\&\ in,\ \mbox{\hyperlink{class_card}{Card}}\&\ card);}
+\DoxyCodeLine{00112\ }
+\DoxyCodeLine{00116\ \ \ \ \ \mbox{\hyperlink{class_card_a4e05b0b68e43e5e76c6194458cee874f}{\string~Card}}();}
+\DoxyCodeLine{00117\ \};}
+\DoxyCodeLine{00118\ }
+\DoxyCodeLine{00128\ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{int}\ operator==(\mbox{\hyperlink{class_card}{Card}}\ left,\ \mbox{\hyperlink{class_card}{Card}}\ right)\ \{}
+\DoxyCodeLine{00129\ \ \ \ \ \textcolor{keywordflow}{if}\ (left.\mbox{\hyperlink{class_card_a4074462e44801969657d2f4941137ebf}{getRankValue}}()\ -\/\ right.\mbox{\hyperlink{class_card_a4074462e44801969657d2f4941137ebf}{getRankValue}}()\ >\ 0)\ \{}
+\DoxyCodeLine{00130\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ 1;}
+\DoxyCodeLine{00131\ \ \ \ \ \}}
+\DoxyCodeLine{00132\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{if}\ (left.\mbox{\hyperlink{class_card_a4074462e44801969657d2f4941137ebf}{getRankValue}}()\ -\/\ right.\mbox{\hyperlink{class_card_a4074462e44801969657d2f4941137ebf}{getRankValue}}()\ <\ 0)\ \{}
+\DoxyCodeLine{00133\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ -\/1;}
+\DoxyCodeLine{00134\ \ \ \ \ \}}
+\DoxyCodeLine{00135\ \ \ \ \ \textcolor{keywordflow}{else}\ \textcolor{keywordflow}{return}\ 0;}
+\DoxyCodeLine{00136\ \}}
+
+\end{DoxyCode}

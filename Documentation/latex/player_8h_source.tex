@@ -1,0 +1,33 @@
+\doxysection{player.\+h}
+\hypertarget{player_8h_source}{}\label{player_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00009\ }
+\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ "{}character.h"{}}}
+\DoxyCodeLine{00011\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_player}{Player}}\ :\ \textcolor{keyword}{public}\ \mbox{\hyperlink{class_character}{Character}}}
+\DoxyCodeLine{00013\ \{}
+\DoxyCodeLine{00014\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{class_player}{Player}}*\ Instance;}
+\DoxyCodeLine{00016\ }
+\DoxyCodeLine{00017\ \ \ \ \ \mbox{\hyperlink{class_player}{Player}}();}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ std::vector<Card>\ player\_cards;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{bool}\ canMove;}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ move(\mbox{\hyperlink{class_card}{Card}}\&\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{cOT}},\ std::vector<Card>\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{uC}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{counter}},\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{wasDrawn}});}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ \mbox{\hyperlink{class_card}{Card}}\ select(\mbox{\hyperlink{class_card}{Card}}\&\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{cOT}},\ std::vector<Card>\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{uC}},\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{numOfEntries}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ draw();}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ pass();}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{bool}\ checkIfRangeIsCorrect(\textcolor{keywordtype}{int}\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{\_input}},\ \mbox{\hyperlink{class_card}{Card}}\&\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{onTable}},\ \mbox{\hyperlink{class_card}{Card}}\&\ \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{selected}});}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \mbox{\hyperlink{class_player}{\string~Player}}();}
+\DoxyCodeLine{00034\ \};}
+
+\end{DoxyCode}

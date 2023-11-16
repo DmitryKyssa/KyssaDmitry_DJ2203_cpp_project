@@ -68,11 +68,6 @@ void NPC::pass()
 	return;
 }
 
-bool NPC::checkIfRangeIsCorrect(int _input, Card& onTable, Card& selected)
-{
-	return false;
-}
-
 NPC::~NPC()
 {
 }

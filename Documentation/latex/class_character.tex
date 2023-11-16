@@ -1,0 +1,82 @@
+\doxysection{Character Class Reference}
+\hypertarget{class_character}{}\label{class_character}\index{Character@{Character}}
+
+
+A class that represents an entity for \doxylink{class_player}{Player} and \doxylink{class_n_p_c}{NPC} classes.  
+
+
+
+
+{\ttfamily \#include $<$character.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_character_aa7a2b97db3f6ec260083f58ce8d54d25}\label{class_character_aa7a2b97db3f6ec260083f58ce8d54d25} 
+{\footnotesize template$<$\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{typename}} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{T}} $>$ }\\\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{void}} {\bfseries print} ()
+\begin{DoxyCompactList}\small\item\em Method for printing T class objects. \end{DoxyCompactList}\item 
+{\footnotesize template$<$\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{typename}} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{T}} $>$ }\\\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{int}} \mbox{\hyperlink{class_character_a9c876f52757b7de6b8ebcc695c6ce51b}{count\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Method for counting score based on cards rank values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\static T \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{get\+Instance}} ()
+\begin{DoxyCompactList}\small\item\em Static method for providing singleton functionality. \end{DoxyCompactList}\item 
+\Hypertarget{class_character_a817f96b3ecc032537061dad6d7483ad8}\label{class_character_a817f96b3ecc032537061dad6d7483ad8} 
+{\footnotesize template$<$typename T $>$ }\\static T \texorpdfstring{$\ast$}{*} {\bfseries get\+Instance} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_character_abc4b0e1dbe73d5c23ca0b33f09e07624}\label{class_character_abc4b0e1dbe73d5c23ca0b33f09e07624} 
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{int}} {\bfseries score} = 0
+\begin{DoxyCompactList}\small\item\em Initial value for int \doxylink{class_character_a9c876f52757b7de6b8ebcc695c6ce51b}{count\+Score()} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents an entity for \doxylink{class_player}{Player} and \doxylink{class_n_p_c}{NPC} classes. 
+
+Meta
+
+Kyssa\+\_\+\+Dmitry\+\_\+\+DJ2203\+\_\+cpp\+\_\+project \begin{DoxyAuthor}{Author}
+Kyssa Dmitry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Sep-\/\+Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_character_a9c876f52757b7de6b8ebcc695c6ce51b}\label{class_character_a9c876f52757b7de6b8ebcc695c6ce51b} 
+\index{Character@{Character}!countScore@{countScore}}
+\index{countScore@{countScore}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{countScore()}{countScore()}}
+{\footnotesize\ttfamily template$<$\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{typename}} \mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{T}} $>$ \\
+\mbox{\hyperlink{class_character_a817f96b3ecc032537061dad6d7483ad8}{int}} Character\+::count\+Score (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Method for counting score based on cards rank values. 
+
+\begin{DoxyReturn}{Returns}
+The sum of T class object cards rank values 
+\end{DoxyReturn}
+\Hypertarget{class_character_a817f96b3ecc032537061dad6d7483ad8}\label{class_character_a817f96b3ecc032537061dad6d7483ad8} 
+\index{Character@{Character}!getInstance@{getInstance}}
+\index{getInstance@{getInstance}!Character@{Character}}
+\doxysubsubsection{\texorpdfstring{getInstance()}{getInstance()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+static T \texorpdfstring{$\ast$}{*} Character\+::get\+Instance (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Static method for providing singleton functionality. 
+
+\begin{DoxyReturn}{Returns}
+Pointer to variable Instance of class T 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+character.\+h\end{DoxyCompactItemize}

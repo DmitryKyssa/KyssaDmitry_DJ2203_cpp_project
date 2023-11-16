@@ -1,0 +1,205 @@
+\doxysection{Card Class Reference}
+\hypertarget{class_card}{}\label{class_card}\index{Card@{Card}}
+
+
+A class that represents a game card.  
+
+
+
+
+{\ttfamily \#include $<$card.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_card_a783f5854cbe8c183ee3d4414c01472c0}\label{class_card_a783f5854cbe8c183ee3d4414c01472c0} 
+{\bfseries Card} ()
+\begin{DoxyCompactList}\small\item\em Default constructor for class \doxylink{class_card}{Card}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_card_a3a97a36db218b92341eef33a592c9186}{Card}} (int \+\_\+suit, int \+\_\+rank)
+\begin{DoxyCompactList}\small\item\em Constructor with parameters for class \doxylink{class_card}{Card}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_card_a16f81b0829f025eb233d480f31a341c4}{Card}} (const \mbox{\hyperlink{class_card}{Card}} \&copy)
+\begin{DoxyCompactList}\small\item\em Copy constructor for class \doxylink{class_card}{Card}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_card}{Card}} \mbox{\hyperlink{class_card_ac079e96cbc10f289cd78400f96bc2a25}{operator=}} (const \mbox{\hyperlink{class_card}{Card}} \&other)
+\begin{DoxyCompactList}\small\item\em operator= overload \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_card_a7b940ceac905a7376f41e237b82dae64}{get\+Suit}} ()
+\begin{DoxyCompactList}\small\item\em Getter for private variable. \end{DoxyCompactList}\item 
+const std\+::string \& \mbox{\hyperlink{class_card_adafcc079ae45697a1c3f04250fabb427}{get\+Rank}} ()
+\begin{DoxyCompactList}\small\item\em Getter for private variable. \end{DoxyCompactList}\item 
+const int \& \mbox{\hyperlink{class_card_ac673b7e4dd84789d1d5a1381e29b3d98}{get\+Suit\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Getter for private variable. \end{DoxyCompactList}\item 
+const int \& \mbox{\hyperlink{class_card_a4074462e44801969657d2f4941137ebf}{get\+Rank\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Getter for private variable. \end{DoxyCompactList}\item 
+\Hypertarget{class_card_a4e05b0b68e43e5e76c6194458cee874f}\label{class_card_a4e05b0b68e43e5e76c6194458cee874f} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Card} ()
+\begin{DoxyCompactList}\small\item\em Destructor of class \doxylink{class_card}{Card}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \mbox{\hyperlink{class_card_a8b2ee6ef6890f4ab4bc1e7c840b74e48}{operator$<$$<$}} (std\+::ostream \&out, \mbox{\hyperlink{class_card}{Card}} \&card)
+\begin{DoxyCompactList}\small\item\em Friend overload for operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. \end{DoxyCompactList}\item 
+std\+::istream \& \mbox{\hyperlink{class_card_afb96aa7066e2e890c93c6049f9e5e6a8}{operator$>$$>$}} (std\+::istream \&in, \mbox{\hyperlink{class_card}{Card}} \&card)
+\begin{DoxyCompactList}\small\item\em Friend overload for operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+A class that represents a game card. 
+
+Meta
+
+Kyssa\+\_\+\+Dmitry\+\_\+\+DJ2203\+\_\+cpp\+\_\+project \begin{DoxyAuthor}{Author}
+Kyssa Dmitry 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+Sep-\/\+Dec 2023 
+\end{DoxyDate}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_card_a3a97a36db218b92341eef33a592c9186}\label{class_card_a3a97a36db218b92341eef33a592c9186} 
+\index{Card@{Card}!Card@{Card}}
+\index{Card@{Card}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{Card()}{Card()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Card\+::\+Card (\begin{DoxyParamCaption}\item[{int}]{\+\_\+suit,  }\item[{int}]{\+\_\+rank }\end{DoxyParamCaption})}
+
+
+
+Constructor with parameters for class \doxylink{class_card}{Card}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \+\_\+suit} & The suit of card \\
+\hline
+\mbox{\texttt{ in}}  & {\em \+\_\+rank} & The rank of card \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_card_a16f81b0829f025eb233d480f31a341c4}\label{class_card_a16f81b0829f025eb233d480f31a341c4} 
+\index{Card@{Card}!Card@{Card}}
+\index{Card@{Card}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{Card()}{Card()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Card\+::\+Card (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_card}{Card}} \&}]{copy }\end{DoxyParamCaption})}
+
+
+
+Copy constructor for class \doxylink{class_card}{Card}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em copy} & The suit of card \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_card_adafcc079ae45697a1c3f04250fabb427}\label{class_card_adafcc079ae45697a1c3f04250fabb427} 
+\index{Card@{Card}!getRank@{getRank}}
+\index{getRank@{getRank}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{getRank()}{getRank()}}
+{\footnotesize\ttfamily const std\+::string \& Card\+::get\+Rank (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for private variable. 
+
+\begin{DoxyReturn}{Returns}
+rank 
+\end{DoxyReturn}
+\Hypertarget{class_card_a4074462e44801969657d2f4941137ebf}\label{class_card_a4074462e44801969657d2f4941137ebf} 
+\index{Card@{Card}!getRankValue@{getRankValue}}
+\index{getRankValue@{getRankValue}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{getRankValue()}{getRankValue()}}
+{\footnotesize\ttfamily const int \& Card\+::get\+Rank\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for private variable. 
+
+\begin{DoxyReturn}{Returns}
+rank\+Value 
+\end{DoxyReturn}
+\Hypertarget{class_card_a7b940ceac905a7376f41e237b82dae64}\label{class_card_a7b940ceac905a7376f41e237b82dae64} 
+\index{Card@{Card}!getSuit@{getSuit}}
+\index{getSuit@{getSuit}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{getSuit()}{getSuit()}}
+{\footnotesize\ttfamily const std\+::string \& Card\+::get\+Suit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for private variable. 
+
+\begin{DoxyReturn}{Returns}
+suit 
+\end{DoxyReturn}
+\Hypertarget{class_card_ac673b7e4dd84789d1d5a1381e29b3d98}\label{class_card_ac673b7e4dd84789d1d5a1381e29b3d98} 
+\index{Card@{Card}!getSuitValue@{getSuitValue}}
+\index{getSuitValue@{getSuitValue}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{getSuitValue()}{getSuitValue()}}
+{\footnotesize\ttfamily const int \& Card\+::get\+Suit\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Getter for private variable. 
+
+\begin{DoxyReturn}{Returns}
+suit\+Value 
+\end{DoxyReturn}
+\Hypertarget{class_card_ac079e96cbc10f289cd78400f96bc2a25}\label{class_card_ac079e96cbc10f289cd78400f96bc2a25} 
+\index{Card@{Card}!operator=@{operator=}}
+\index{operator=@{operator=}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{class_card}{Card}} Card\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_card}{Card}} \&}]{other }\end{DoxyParamCaption})}
+
+
+
+operator= overload 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em other} & Object for assignment (right operand) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to this object (left operand) 
+\end{DoxyReturn}
+
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_card_a8b2ee6ef6890f4ab4bc1e7c840b74e48}\label{class_card_a8b2ee6ef6890f4ab4bc1e7c840b74e48} 
+\index{Card@{Card}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{out,  }\item[{\mbox{\hyperlink{class_card}{Card}} \&}]{card }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend overload for operator\texorpdfstring{$<$}{<}\texorpdfstring{$<$}{<}. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em card} & Reference to object of class \doxylink{class_card}{Card} \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em out} & Output stream \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_card_afb96aa7066e2e890c93c6049f9e5e6a8}\label{class_card_afb96aa7066e2e890c93c6049f9e5e6a8} 
+\index{Card@{Card}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!Card@{Card}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{in,  }\item[{\mbox{\hyperlink{class_card}{Card}} \&}]{card }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Friend overload for operator\texorpdfstring{$>$}{>}\texorpdfstring{$>$}{>} 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em card} & Reference to object of class \doxylink{class_card}{Card} \\
+\hline
+\mbox{\texttt{ in,out}}  & {\em in} & Input stream \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+card.\+h\item 
+card.\+cpp\end{DoxyCompactItemize}
