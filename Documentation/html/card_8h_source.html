@@ -98,20 +98,23 @@ $(document).ready(function(){initNavTree('card_8h_source.html',''); initResizabl
   <div class="headertitle"><div class="title">card.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="card_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">const</span> std::unordered_map &lt;int, std::string&gt; suits{</div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="};">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="card_8h.html#a5e8b47807de2769f9ded90948b9c5252">   10</a></span><span class="keyword">const</span> std::unordered_map &lt;int, std::string&gt; <a class="code hl_variable" href="card_8h.html#a5e8b47807de2769f9ded90948b9c5252">suits</a>{</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    {1, <span class="stringliteral">&quot;Diamonds&quot;</span>},</div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {2, <span class="stringliteral">&quot;Hearts&quot;</span>},</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    {3, <span class="stringliteral">&quot;Clubs&quot;</span>},</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    {4, <span class="stringliteral">&quot;Spades&quot;</span>}</div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>};</div>
+</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">const</span> std::unordered_map &lt;int, std::string&gt; ranks{</div>
+<div class="foldopen" id="foldopen00020" data-start="{" data-end="};">
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="card_8h.html#a4bb0fbe45caddcc8aa0dbf2ce7f37ed6">   20</a></span><span class="keyword">const</span> std::unordered_map &lt;int, std::string&gt; <a class="code hl_variable" href="card_8h.html#a4bb0fbe45caddcc8aa0dbf2ce7f37ed6">ranks</a>{</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    {6, <span class="stringliteral">&quot;Six&quot;</span>},</div>
 <div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    {7, <span class="stringliteral">&quot;Seven&quot;</span>},</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    {8, <span class="stringliteral">&quot;Eight&quot;</span>},</div>
@@ -122,15 +125,16 @@ $(document).ready(function(){initNavTree('card_8h_source.html',''); initResizabl
 <div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    {4, <span class="stringliteral">&quot;King&quot;</span>},</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {11, <span class="stringliteral">&quot;Ace&quot;</span>},</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>};</div>
+</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
 <div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
 <div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="class_card.html">   42</a></span><span class="keyword">class </span><a class="code hl_class" href="class_card.html">Card</a></div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    std::string suit; </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    std::string rank;</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">int</span> suitValue;</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="keywordtype">int</span> rankValue;</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="class_card.html#a5ac01df9ae312cdb06ed986397445cac">   45</a></span>    std::string <a class="code hl_variable" href="class_card.html#a5ac01df9ae312cdb06ed986397445cac">suit</a>; </div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="class_card.html#a49353d2c0122828982490d640d7ebb4c">   46</a></span>    std::string <a class="code hl_variable" href="class_card.html#a49353d2c0122828982490d640d7ebb4c">rank</a>; </div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="class_card.html#a15218feaf687b6f81f85383e4aa11834">   47</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_card.html#a15218feaf687b6f81f85383e4aa11834">suitValue</a>; </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno"><a class="line" href="class_card.html#a33d7bc141b2bc24c418123eccc9fbc6b">   48</a></span>    <span class="keywordtype">int</span> <a class="code hl_variable" href="class_card.html#a33d7bc141b2bc24c418123eccc9fbc6b">rankValue</a>; </div>
 <div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <a class="code hl_function" href="class_card.html#a783f5854cbe8c183ee3d4414c01472c0">Card</a>();</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
@@ -144,43 +148,49 @@ $(document).ready(function(){initNavTree('card_8h_source.html',''); initResizabl
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span> </div>
 <div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keyword">const</span> std::string&amp; <a class="code hl_function" href="class_card.html#adafcc079ae45697a1c3f04250fabb427">getRank</a>();</div>
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code hl_function" href="class_card.html#ac673b7e4dd84789d1d5a1381e29b3d98">getSuitValue</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>();</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="keyword">const</span> <span class="keywordtype">int</span>&amp; <a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>();</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="class_card.html#a8b2ee6ef6890f4ab4bc1e7c840b74e48">operator&lt;&lt;</a>(std::ostream&amp; out, <a class="code hl_class" href="class_card.html">Card</a>&amp; card);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">friend</span> std::istream&amp; <a class="code hl_friend" href="class_card.html#afb96aa7066e2e890c93c6049f9e5e6a8">operator&gt;&gt;</a>(std::istream&amp; in, <a class="code hl_class" href="class_card.html">Card</a>&amp; card);</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <a class="code hl_function" href="class_card.html#a4e05b0b68e43e5e76c6194458cee874f">~Card</a>();</div>
-<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>};</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keyword">friend</span> std::ostream&amp; <a class="code hl_friend" href="class_card.html#a8b2ee6ef6890f4ab4bc1e7c840b74e48">operator&lt;&lt;</a>(std::ostream&amp; out, <a class="code hl_class" href="class_card.html">Card</a>&amp; card);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keyword">friend</span> std::istream&amp; <a class="code hl_friend" href="class_card.html#afb96aa7066e2e890c93c6049f9e5e6a8">operator&gt;&gt;</a>(std::istream&amp; in, <a class="code hl_class" href="class_card.html">Card</a>&amp; card);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_function" href="class_card.html#a4e05b0b68e43e5e76c6194458cee874f">~Card</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>};</div>
 </div>
-<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="keyword">inline</span> <span class="keywordtype">int</span> operator==(<a class="code hl_class" href="class_card.html">Card</a> left, <a class="code hl_class" href="class_card.html">Card</a> right) {</div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">if</span> (left.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() - right.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() &gt; 0) {</div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>    }</div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (left.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() - right.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() &lt; 0) {</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>    }</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>}</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="card_8h.html#a8db1271fa504140cd3bfce2fad366588">  122</a></span><span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_function" href="card_8h.html#a8db1271fa504140cd3bfce2fad366588">operator==</a>(<a class="code hl_class" href="class_card.html">Card</a> left, <a class="code hl_class" href="class_card.html">Card</a> right) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">if</span> (left.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() - right.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() &gt; 0) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    }</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (left.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() - right.<a class="code hl_function" href="class_card.html#a4074462e44801969657d2f4941137ebf">getRankValue</a>() &lt; 0) {</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        <span class="keywordflow">return</span> -1;</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> 0;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+</div>
+<div class="ttc" id="acard_8h_html_a4bb0fbe45caddcc8aa0dbf2ce7f37ed6"><div class="ttname"><a href="card_8h.html#a4bb0fbe45caddcc8aa0dbf2ce7f37ed6">ranks</a></div><div class="ttdeci">const std::unordered_map&lt; int, std::string &gt; ranks</div><div class="ttdoc">An unordered map that contains ranks' names and values.</div><div class="ttdef"><b>Definition</b> card.h:20</div></div>
+<div class="ttc" id="acard_8h_html_a5e8b47807de2769f9ded90948b9c5252"><div class="ttname"><a href="card_8h.html#a5e8b47807de2769f9ded90948b9c5252">suits</a></div><div class="ttdeci">const std::unordered_map&lt; int, std::string &gt; suits</div><div class="ttdoc">An unordered map that contains suits' names.</div><div class="ttdef"><b>Definition</b> card.h:10</div></div>
+<div class="ttc" id="acard_8h_html_a8db1271fa504140cd3bfce2fad366588"><div class="ttname"><a href="card_8h.html#a8db1271fa504140cd3bfce2fad366588">operator==</a></div><div class="ttdeci">int operator==(Card left, Card right)</div><div class="ttdoc">Overload of operator==.</div><div class="ttdef"><b>Definition</b> card.h:122</div></div>
 <div class="ttc" id="aclass_card_html"><div class="ttname"><a href="class_card.html">Card</a></div><div class="ttdoc">A class that represents a game card.</div><div class="ttdef"><b>Definition</b> card.h:43</div></div>
-<div class="ttc" id="aclass_card_html_a4074462e44801969657d2f4941137ebf"><div class="ttname"><a href="class_card.html#a4074462e44801969657d2f4941137ebf">Card::getRankValue</a></div><div class="ttdeci">const int &amp; getRankValue()</div><div class="ttdoc">Getter for private variable.</div><div class="ttdef"><b>Definition</b> card.cpp:50</div></div>
-<div class="ttc" id="aclass_card_html_a4e05b0b68e43e5e76c6194458cee874f"><div class="ttname"><a href="class_card.html#a4e05b0b68e43e5e76c6194458cee874f">Card::~Card</a></div><div class="ttdeci">~Card()</div><div class="ttdoc">Destructor of class Card.</div><div class="ttdef"><b>Definition</b> card.cpp:78</div></div>
+<div class="ttc" id="aclass_card_html_a15218feaf687b6f81f85383e4aa11834"><div class="ttname"><a href="class_card.html#a15218feaf687b6f81f85383e4aa11834">Card::suitValue</a></div><div class="ttdeci">int suitValue</div><div class="ttdoc">Suit value (key from suits)</div><div class="ttdef"><b>Definition</b> card.h:47</div></div>
+<div class="ttc" id="aclass_card_html_a33d7bc141b2bc24c418123eccc9fbc6b"><div class="ttname"><a href="class_card.html#a33d7bc141b2bc24c418123eccc9fbc6b">Card::rankValue</a></div><div class="ttdeci">int rankValue</div><div class="ttdoc">Rank value (key from ranks)</div><div class="ttdef"><b>Definition</b> card.h:48</div></div>
+<div class="ttc" id="aclass_card_html_a4074462e44801969657d2f4941137ebf"><div class="ttname"><a href="class_card.html#a4074462e44801969657d2f4941137ebf">Card::getRankValue</a></div><div class="ttdeci">const int &amp; getRankValue()</div><div class="ttdoc">Getter for private variable.</div><div class="ttdef"><b>Definition</b> card.cpp:48</div></div>
+<div class="ttc" id="aclass_card_html_a49353d2c0122828982490d640d7ebb4c"><div class="ttname"><a href="class_card.html#a49353d2c0122828982490d640d7ebb4c">Card::rank</a></div><div class="ttdeci">std::string rank</div><div class="ttdoc">Rank name (value from ranks)</div><div class="ttdef"><b>Definition</b> card.h:46</div></div>
+<div class="ttc" id="aclass_card_html_a4e05b0b68e43e5e76c6194458cee874f"><div class="ttname"><a href="class_card.html#a4e05b0b68e43e5e76c6194458cee874f">Card::~Card</a></div><div class="ttdeci">~Card()</div><div class="ttdoc">Destructor of class Card.</div><div class="ttdef"><b>Definition</b> card.cpp:76</div></div>
+<div class="ttc" id="aclass_card_html_a5ac01df9ae312cdb06ed986397445cac"><div class="ttname"><a href="class_card.html#a5ac01df9ae312cdb06ed986397445cac">Card::suit</a></div><div class="ttdeci">std::string suit</div><div class="ttdoc">Suit name (value from suits)</div><div class="ttdef"><b>Definition</b> card.h:45</div></div>
 <div class="ttc" id="aclass_card_html_a783f5854cbe8c183ee3d4414c01472c0"><div class="ttname"><a href="class_card.html#a783f5854cbe8c183ee3d4414c01472c0">Card::Card</a></div><div class="ttdeci">Card()</div><div class="ttdoc">Default constructor for class Card.</div><div class="ttdef"><b>Definition</b> card.cpp:3</div></div>
 <div class="ttc" id="aclass_card_html_a7b940ceac905a7376f41e237b82dae64"><div class="ttname"><a href="class_card.html#a7b940ceac905a7376f41e237b82dae64">Card::getSuit</a></div><div class="ttdeci">const std::string &amp; getSuit()</div><div class="ttdoc">Getter for private variable.</div><div class="ttdef"><b>Definition</b> card.cpp:44</div></div>
-<div class="ttc" id="aclass_card_html_a8b2ee6ef6890f4ab4bc1e7c840b74e48"><div class="ttname"><a href="class_card.html#a8b2ee6ef6890f4ab4bc1e7c840b74e48">Card::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, Card &amp;card)</div><div class="ttdoc">Friend overload for operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> card.cpp:52</div></div>
+<div class="ttc" id="aclass_card_html_a8b2ee6ef6890f4ab4bc1e7c840b74e48"><div class="ttname"><a href="class_card.html#a8b2ee6ef6890f4ab4bc1e7c840b74e48">Card::operator&lt;&lt;</a></div><div class="ttdeci">friend std::ostream &amp; operator&lt;&lt;(std::ostream &amp;out, Card &amp;card)</div><div class="ttdoc">Friend overload for operator&lt;&lt;.</div><div class="ttdef"><b>Definition</b> card.cpp:50</div></div>
 <div class="ttc" id="aclass_card_html_ac079e96cbc10f289cd78400f96bc2a25"><div class="ttname"><a href="class_card.html#ac079e96cbc10f289cd78400f96bc2a25">Card::operator=</a></div><div class="ttdeci">Card operator=(const Card &amp;other)</div><div class="ttdoc">operator= overload</div><div class="ttdef"><b>Definition</b> card.cpp:27</div></div>
-<div class="ttc" id="aclass_card_html_ac673b7e4dd84789d1d5a1381e29b3d98"><div class="ttname"><a href="class_card.html#ac673b7e4dd84789d1d5a1381e29b3d98">Card::getSuitValue</a></div><div class="ttdeci">const int &amp; getSuitValue()</div><div class="ttdoc">Getter for private variable.</div><div class="ttdef"><b>Definition</b> card.cpp:48</div></div>
 <div class="ttc" id="aclass_card_html_adafcc079ae45697a1c3f04250fabb427"><div class="ttname"><a href="class_card.html#adafcc079ae45697a1c3f04250fabb427">Card::getRank</a></div><div class="ttdeci">const std::string &amp; getRank()</div><div class="ttdoc">Getter for private variable.</div><div class="ttdef"><b>Definition</b> card.cpp:46</div></div>
-<div class="ttc" id="aclass_card_html_afb96aa7066e2e890c93c6049f9e5e6a8"><div class="ttname"><a href="class_card.html#afb96aa7066e2e890c93c6049f9e5e6a8">Card::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;in, Card &amp;card)</div><div class="ttdoc">Friend overload for operator&gt;&gt;</div><div class="ttdef"><b>Definition</b> card.cpp:56</div></div>
+<div class="ttc" id="aclass_card_html_afb96aa7066e2e890c93c6049f9e5e6a8"><div class="ttname"><a href="class_card.html#afb96aa7066e2e890c93c6049f9e5e6a8">Card::operator&gt;&gt;</a></div><div class="ttdeci">friend std::istream &amp; operator&gt;&gt;(std::istream &amp;in, Card &amp;card)</div><div class="ttdoc">Friend overload for operator&gt;&gt;</div><div class="ttdef"><b>Definition</b> card.cpp:54</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>card.h</b></li>
+    <li class="navelem"><a class="el" href="card_8h.html">card.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

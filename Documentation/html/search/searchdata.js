@@ -1,30 +1,33 @@
 var indexSectionsWithContent =
 {
-  0: "cdgikmnops~",
+  0: "cdgikmnoprst~",
   1: "cdnp",
-  2: "cdgmnops~",
-  3: "cdips",
-  4: "o",
-  5: "k"
+  2: "cdgmnpr",
+  3: "cdgmnoprst~",
+  4: "cdiprs",
+  5: "o",
+  6: "k"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions",
-  3: "variables",
-  4: "related",
-  5: "pages"
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "related",
+  6: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Functions",
-  3: "Variables",
-  4: "Friends",
-  5: "Pages"
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Friends",
+  6: "Pages"
 };
 

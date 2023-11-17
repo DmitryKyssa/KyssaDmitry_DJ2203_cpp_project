@@ -42,10 +42,10 @@ const std::unordered_map <int, std::string> ranks{
 class Card
 {
 private:
-	std::string suit; 
-	std::string rank;
-	int suitValue;
-	int rankValue;
+	std::string suit; /**< \brief Suit name (value from #suits)*/
+	std::string rank; /**< \brief Rank name (value from #ranks)*/
+	int suitValue; /**< \brief Suit value (key from #suits)*/
+	int rankValue; /**< \brief Rank value (key from #ranks)*/
 public:
 	/**
 	* \brief Default constructor for class Card
@@ -86,12 +86,6 @@ public:
 
 	/**
 	* \brief Getter for private variable
-	* \return suitValue
-	*/
-	const int& getSuitValue();
-
-	/**
-	* \brief Getter for private variable
 	* \return rankValue
 	*/
 	const int& getRankValue();
@@ -117,13 +111,13 @@ public:
 };
 
 /**
-* \fn int operator==(Card left, Card right)
 * \brief Overload of operator==
 * \param[in] left Left operand for comparison
 * \param[in] right Right operand for comparison
 * \return Integer value:
-* 0 if left and right have same #getRankValue()
-* 1 if left rankValue is greater then right
+* 0, if left and right have same getRankValue()
+* 1, if left getRankValue() is greater then right
+* -1, if left getRankValue() is less then right
 */
 inline int operator==(Card left, Card right) {
 	if (left.getRankValue() - right.getRankValue() > 0) {

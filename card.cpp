@@ -45,8 +45,6 @@ const std::string& Card::getSuit() { return this->suit; }
 
 const std::string& Card::getRank() { return this->rank; }
 
-const int& Card::getSuitValue() { return this->suitValue; }
-
 const int& Card::getRankValue() { return this->rankValue; }
 
 std::ostream& operator<<(std::ostream& out, Card& card) {

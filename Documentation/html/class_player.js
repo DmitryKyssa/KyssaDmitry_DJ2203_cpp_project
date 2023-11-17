@@ -8,5 +8,6 @@ var class_player =
     [ "pass", "class_player.html#a89836351a1791ca0f886992de580946a", null ],
     [ "select", "class_player.html#a32fb055b0df373934c822b7b0471714d", null ],
     [ "canMove", "class_player.html#a6f4f025e2ff214769d0951c40ebe2aef", null ],
+    [ "Instance", "class_player.html#a04c8263833a08c64655419c8976371fd", null ],
     [ "player_cards", "class_player.html#aa735e2cc948d9d887feb70fec9800660", null ]
 ];

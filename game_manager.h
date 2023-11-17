@@ -8,19 +8,9 @@
 #include "windows.h"
 
 /**
-* \brief A header that provides game logic and rules
-*/
-/**
-* Meta
-* \brief Kyssa_Dmitry_DJ2203_cpp_project
-* \author Kyssa Dmitry
-* \date Sep-Dec 2023
-*/
-
-/**
-* \brief Method for adding card(s) from #deck to #player_cards
+* \brief Method for adding card(s) from #Deck::deck to #Player::player_cards or NPC::player_cards
 * \param[in] numOfTakenCards Number of cards for taking
-* \param[in] Type Pointer to class owning #player_cards
+* \param[in] Type Pointer to class owning #Player::player_cards or NPC::player_cards
 */
 template<typename T>
 void takeCards(unsigned int numOfTakenCards, T* Type) {
@@ -33,7 +23,7 @@ void takeCards(unsigned int numOfTakenCards, T* Type) {
 /**
 * \brief Method that defines special cards effect
 * \param[in] cOT Current card on table
-* \param[in] Type Pointer to class owning #player_cards
+* \param[in] Type Pointer to class owning #Player::player_cards or NPC::player_cards
 */
 template<typename T>
 void cardsEffects(Card& cOT, T* Type) {
@@ -55,7 +45,7 @@ void cardsEffects(Card& cOT, T* Type) {
 * \brief Method for updating console 
 * \param[in] cOT Current card on table
 * \param[in] uC Vector of used cards
-* \param[in] wasDrawn Flag of card drawing from #deck
+* \param[in] wasDrawn Flag of card drawing from #Deck::deck
 */
 inline void refreshScreen(Card& cOT, std::vector<Card>& uC, bool wasDrawn) {
 	system("cls");

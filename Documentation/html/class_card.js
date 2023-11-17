@@ -7,8 +7,11 @@ var class_card =
     [ "getRank", "class_card.html#adafcc079ae45697a1c3f04250fabb427", null ],
     [ "getRankValue", "class_card.html#a4074462e44801969657d2f4941137ebf", null ],
     [ "getSuit", "class_card.html#a7b940ceac905a7376f41e237b82dae64", null ],
-    [ "getSuitValue", "class_card.html#ac673b7e4dd84789d1d5a1381e29b3d98", null ],
     [ "operator=", "class_card.html#ac079e96cbc10f289cd78400f96bc2a25", null ],
     [ "operator<<", "class_card.html#a8b2ee6ef6890f4ab4bc1e7c840b74e48", null ],
-    [ "operator>>", "class_card.html#afb96aa7066e2e890c93c6049f9e5e6a8", null ]
+    [ "operator>>", "class_card.html#afb96aa7066e2e890c93c6049f9e5e6a8", null ],
+    [ "rank", "class_card.html#a49353d2c0122828982490d640d7ebb4c", null ],
+    [ "rankValue", "class_card.html#a33d7bc141b2bc24c418123eccc9fbc6b", null ],
+    [ "suit", "class_card.html#a5ac01df9ae312cdb06ed986397445cac", null ],
+    [ "suitValue", "class_card.html#a15218feaf687b6f81f85383e4aa11834", null ]
 ];
