@@ -13,7 +13,7 @@ NPC::NPC()
 NPC* NPC::Instance = nullptr;
 
 //TODO improve logic of making a move
-void NPC::move(Card& cOT, int counter)
+void NPC::move(Card& cOT, std::vector<Card> uC, int counter)
 {
 	cOT = select(cOT);
 
@@ -24,15 +24,18 @@ void NPC::move(Card& cOT, int counter)
 	if (cOT.getSuit() == "" && counter == 0) {
 		draw();
 		counter++;
-		move(cOT, counter);
+		move(cOT, uC, counter);
 	}
 
 	if (cOT.getRank() == "Eight" || cOT.getRank() == "Ace") {
+		std::cout << "NPC moves with " << cOT << std::endl;
 		counter++;
-		move(cOT, counter);
+		uC.push_back(cOT);
+		move(cOT, uC, counter);
 	}
 
-	if (counter == 0) {
+	if ((cOT.getRank() != "Eight" || cOT.getRank() != "Ace") && cOT.getRank() != "") {
+		uC.push_back(cOT);
 		std::cout << "NPC moves with " << cOT << std::endl;
 	}
 

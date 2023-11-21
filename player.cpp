@@ -36,18 +36,6 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries, bool wasDra
 			std::cin >> choice;
 		} while (!(choice >= 1 && choice <= 3) && choice == 2);
 	}
-	/*else if ((cOT.getRank() != "Eight" || cOT.getRank() != "Ace") && numOfEntries > 0) {
-		std::cout << "On table is not eight or ace" << std::endl;
-		do
-		{
-			std::cout << "\nChoose an option:\n"
-				<< "1) Make a move\n"
-				<< "2) Draw\n"
-				<< "3) Pass\n"
-				<< "Enter 1, 2 or 3: " << std::endl;
-			std::cin >> choice;
-		} while (!(choice >= 1 && choice <= 3));
-	}*/
 	else if ((cOT.getRank() != "Eight" || cOT.getRank() != "Ace") && numOfEntries > 0) {
 		canMove = false;
 		return;
@@ -59,6 +47,7 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries, bool wasDra
 		cOT = select(cOT, uC, numOfEntries);
 		numOfEntries++;
 		wasDrawn = false;
+		//refreshScreen(cOT, uC, wasDrawn);
 		move(cOT, uC, numOfEntries, wasDrawn);
 		canMove = false;
 		break;
@@ -66,6 +55,7 @@ void Player::move(Card& cOT, std::vector<Card> uC, int numOfEntries, bool wasDra
 		draw();
 		wasDrawn = true;
 		refreshScreen(cOT, uC, wasDrawn);
+		move(cOT, uC, ++numOfEntries, wasDrawn);
 		break;
 	case 3:
 		pass();
@@ -85,13 +75,14 @@ Card Player::select(Card& cOT, std::vector<Card> uC, int numOfEntries)
 
 		if (input == 'D' || input == 'd') {
 			draw();
-			move(cOT, numOfEntries++, true);
+			move(cOT, uC, numOfEntries++, true);
 		}
 
 		tmp = player_cards.at(input - 1);
 	} while (!checkIfRangeIsCorrect(input, cOT, tmp));
 
 	player_cards.erase(player_cards.begin() + input - 1);
+	uC.push_back(tmp);
 	return tmp;
 }
 

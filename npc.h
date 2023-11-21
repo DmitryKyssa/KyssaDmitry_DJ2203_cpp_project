@@ -37,9 +37,10 @@ public:
 	/**
 	* \brief Method that defines rules of a move
 	* \param[in] cOT Current card on table
+	* \param[in] uC Vector of used cards
 	* \param[in] counter Number of entries in method
 	*/
-	void move(Card& cOT, int counter);
+	void move(Card& cOT, std::vector<Card> uC, int counter);
 
 	/**
 	* \brief Method that determines card for moving

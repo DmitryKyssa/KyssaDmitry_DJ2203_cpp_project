@@ -14,10 +14,14 @@
 */
 template<typename T>
 void takeCards(unsigned int numOfTakenCards, T* Type) {
+	std::string _typeName = "";
 	for (unsigned int i = 0; i < numOfTakenCards; i++) {
 		Card tmp = Character::getInstance<Deck>()->deck.back();
+		_typeName = typeid(Character::getInstance<T>()).name();
 		Character::getInstance<T>()->player_cards.push_back(tmp);
+		Character::getInstance<Deck>()->deck.pop_back();
 	}
+	std::cout << "The " << _typeName << " takes " << numOfTakenCards << " cards." << std::endl;
 }
 
 /**
@@ -87,18 +91,18 @@ inline void refreshScreen(Card& cOT, std::vector<Card>& uC, bool wasDrawn) {
 		NPC::getInstance<NPC>()->canMove = true;
 	}
 
-	uC.push_back(cOT);
+	//uC.push_back(cOT);
 
 	cardsEffects<NPC>(cOT, NPC::getInstance<NPC>());
 
 	int npcCounter = 0;
 
 	if (NPC::getInstance<NPC>()->canMove) {
-		NPC::getInstance<NPC>()->move(cOT, npcCounter);
+		NPC::getInstance<NPC>()->move(cOT, uC, npcCounter);
 		Player::getInstance<Player>()->canMove = true;
 	}
 
-	uC.push_back(cOT);
+	//uC.push_back(cOT);
 
 	cardsEffects<Player>(cOT, Player::getInstance<Player>());
 
