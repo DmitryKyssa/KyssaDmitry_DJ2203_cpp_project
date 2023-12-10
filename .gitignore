@@ -24,7 +24,6 @@
 *.lai
 *.la
 *.a
-*.lib
 
 # Executables
 *.exe
@@ -50,7 +49,11 @@ ipch/
 *.*.db-shm
 *.*.db-wal
 
-#Debug files
-Debug/
-
 *.win
+*.tlog
+*.pdb
+*.*.recipe
+*.txt
+*.log
+*.ilk
+*.idb
