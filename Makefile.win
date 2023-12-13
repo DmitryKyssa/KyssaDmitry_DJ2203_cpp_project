@@ -3,17 +3,20 @@ CXXF = -std=c++14
 LDF = -lstdc++
 
 all: Exe
-Exe: main.o game_basic_structs.o player.o
-	$(CC) main.o game_basic_structs.o player.o -o Exe $(LDF)
+Exe: main.o player.o npc.o card.o deck.o
+	$(CC) main.o player.o npc.o card.o deck.o -o Exe $(LDF) -L -lcard -L -ldeck -L -lplayer -L -lnpc 
 
 main.o: main.cpp
 	$(CC) -c main.cpp $(CXXF)
 
-game_basic_structs.o: game_basic_structs.cpp
-	$(CC) -c game_basic_structs.cpp $(CXXF)
-
 player.o: player.cpp
 	$(CC) -c player.cpp $(CXXF)
 
-clean:
-	rm -rf *o main.o game_basic_structs.o player.o Exe
+npc.o: npc.cpp
+	$(CC) -c npc.cpp $(CXXF)
+
+card.o: card.cpp
+	$(CC) -c card.cpp $(CXXF)
+
+deck.o: deck.cpp
+	$(CC) -c deck.cpp $(CXXF)
