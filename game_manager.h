@@ -6,6 +6,7 @@
 #include "npc.h"
 #include "deck.h"
 #include "windows.h"
+#include <typeinfo>
 
 /**
 * \brief Method for adding card(s) from #Deck::deck to #Player::player_cards or NPC::player_cards
